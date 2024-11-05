@@ -10,7 +10,7 @@ import {
 import { cn } from '@/lib/utils';
 import { useAppContext } from '@/hooks/use-app';
 import { RefId } from '@/types';
-import { Button } from './Button';
+import { Button } from './ui/Button';
 import { MenuIcon } from 'lucide-react';
 
 export default function Navbar() {
