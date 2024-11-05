@@ -6,10 +6,11 @@ import {
   SheetContent,
   SheetTitle,
   SheetDescription,
-} from '@/components/ui/sheet';
+} from '@/components/ui/Sheet';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/Button';
 import { MenuIcon } from 'lucide-react';
+import ThemeSwitch from './ThemeSwitch';
 import { RefId, useAppContext } from '@/context';
 
 export default function Navbar() {
@@ -44,6 +45,7 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <ThemeSwitch />
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
