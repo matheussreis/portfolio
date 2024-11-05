@@ -8,10 +8,9 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { useAppContext } from '@/hooks/use-app';
-import { RefId } from '@/types';
 import { Button } from './ui/Button';
 import { MenuIcon } from 'lucide-react';
+import { RefId, useAppContext } from '@/context';
 
 export default function Navbar() {
   const { scrollToSection, currentSection } = useAppContext();
