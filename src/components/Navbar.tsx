@@ -11,16 +11,17 @@ import { MenuIcon } from 'lucide-react';
 import ThemeSwitch from './ThemeSwitch';
 import { RefId, useAppContext } from '@/context';
 import LanguageSwitch from '@/components/LanguageSwitch';
+import { navbarItemKeys } from '@/constants';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
   const { scrollToSection, currentSection } = useAppContext();
+  const { t } = useTranslation();
 
-  const items = [
-    { label: 'Home', key: 'home' },
-    { label: 'Experience', key: 'experience' },
-    { label: 'Education', key: 'education' },
-    { label: 'Projects', key: 'projects' },
-  ];
+  const items = navbarItemKeys.map((item) => ({
+    label: t(`layout.navbar.items.${item}`),
+    key: `${item}`,
+  }));
 
   return (
     <header className="h-16 w-full sticky top-0 bg-background select-none">
@@ -50,13 +51,17 @@ export default function Navbar() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <MenuIcon className="h-5 w-5" />
-                <span className="sr-only">Menu Title</span>
+                <span className="sr-only">
+                  {t('layout.navbar.sr-menu-title')}
+                </span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="md:hidden">
-              <SheetTitle className="hidden">Menu Title Mobile</SheetTitle>
+              <SheetTitle className="hidden">
+                {t('layout.navbar.mobile.title')}
+              </SheetTitle>
               <SheetDescription className="hidden">
-                Menu Description Mobile
+                {t('layout.navbar.mobile.description')}
               </SheetDescription>
               <nav className="grid gap-4 px-4 py-6">
                 {items.map((item) => (

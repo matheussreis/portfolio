@@ -137,7 +137,7 @@
         "item1": {
           "name": "Sistema Interno de Apoio à Habitação (HAP)",
           "description": "Este projeto apoia as autoridades locais irlandesas na assistência habitacional a famílias com necessidades de longo prazo, incluindo beneficiários de Subsídio de Renda. Facilita candidaturas e avaliações de elegibilidade através de uma plataforma eficiente e amigável.",
-          "type": { "name": "Profissional", "style": "outline" },
+          "type": { "name": "Profissional", "style": "default" },
           "href": "",
           "technologies": {
             "javascript": "JavaScript",
@@ -152,7 +152,7 @@
         "item2": {
           "name": "Portal de Candidaturas HAP",
           "description": "Este projeto permite que famílias com necessidades de longo prazo e proprietários gerenciem efetivamente as suas candidaturas habitacionais.",
-          "type": { "name": "Profissional", "style": "outline" },
+          "type": { "name": "Profissional", "style": "default" },
           "href": "",
           "technologies": {
             "javascript": "JavaScript",
@@ -164,7 +164,7 @@
         "item3": {
           "name": "Site de Concessionária de Automóveis",
           "description": "Este projeto é um website simples para pequenas concessionárias de automóveis. O objetivo é oferecer um design limpo com funcionalidade mínima, permitindo que qualquer pessoa à procura de um carro veja as fotos e entre em contato com o concessionário caso tenha interesse.",
-          "type": { "name": "Pessoal", "style": "default" },
+          "type": { "name": "Pessoal", "style": "outline" },
           "href": "https://github.com/matheussreis/car-dealer-site",
           "technologies": {
             "react": "React.js",
@@ -177,7 +177,7 @@
         "item4": {
           "name": "Jogo do Galo",
           "description": "Este projeto é uma implementação simples do popular jogo Jogo do Galo. A ideia deste projeto foi aplicar o Redux num projeto React utilizando TypeScript. Nesta implementação, há apenas o modo jogador contra jogador, onde dois utilizadores podem jogar no mesmo computador.",
-          "type": { "name": "Pessoal", "style": "default" },
+          "type": { "name": "Pessoal", "style": "outline" },
           "href": "https://github.com/matheussreis/tic-tac-toe-ts",
           "technologies": {
             "react": "React.js",

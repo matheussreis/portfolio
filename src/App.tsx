@@ -1,14 +1,18 @@
 import Navbar from './components/Navbar';
-import { useTranslation } from 'react-i18next';
+import HeroSection from './components/HeroSection';
+import ExperienceSection from './components/ExperienceSection';
+import EducationSection from './components/EducationSection';
+import ProjectSection from './components/ProjectSection';
 
 export default function App() {
-  const { t } = useTranslation('translation');
-
   return (
     <>
       <Navbar />
-      <main>
-        <h1>{t('sections.hero.description')}</h1>
+      <main className="flex-grow min-h-screen">
+        <HeroSection />
+        <ExperienceSection />
+        <EducationSection />
+        <ProjectSection />
       </main>
     </>
   );
