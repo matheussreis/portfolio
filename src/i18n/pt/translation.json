@@ -1,0 +1,196 @@
+{
+  "system": {
+    "settings": {
+      "siteName": "Matheus Reis",
+      "date": {
+        "currentDateText": "Atualmente"
+      }
+    },
+    "languages": {
+      "sr-title": "Idioma",
+      "options": {
+        "en": "Inglês",
+        "pt": "Português"
+      }
+    },
+    "themes": {
+      "sr-title": "Alternar tema",
+      "options": {
+        "light": "Claro",
+        "dark": "Escuro",
+        "system": "Sistema"
+      }
+    }
+  },
+  "layout": {
+    "navbar": {
+      "title": "MSR",
+      "sr-menu-title": "Alternar Menu",
+      "items": {
+        "home": "Início",
+        "experience": "Experiência",
+        "education": "Educação",
+        "projects": "Projetos"
+      },
+      "mobile": {
+        "title": "Menu",
+        "description": "Links para Seções"
+      }
+    },
+    "footer": {
+      "description": "Matheus Reis. Todos os direitos reservados.",
+      "links": {
+        "github": {
+          "href": "https://github.com/matheussreis",
+          "sr-title": "GitHub"
+        },
+        "linkedin": {
+          "href": "https://www.linkedin.com/in/matheus-da-silva-dos-reis-3787a91b8/",
+          "sr-title": "LinkedIn"
+        }
+      }
+    },
+    "not-found": {
+      "title": "Página não encontrada",
+      "header": "Ops, página não encontrada!",
+      "description": "A página que procura não existe. Verifique a URL ou volte à página inicial.",
+      "buttons": {
+        "redirect": "Ir para a Página Inicial"
+      }
+    }
+  },
+  "sections": {
+    "hero": {
+      "sr-title": "Secção de Apresentação",
+      "description": "👋 Olá, sou o Matheus, um Engenheiro Full Stack focado em construir aplicações limpas e orientadas a dados com PHP, JavaScript e React."
+    },
+    "experience": {
+      "title": "Experiência",
+      "sr-title": "Secção de Experiência",
+      "data": {
+        "item1": {
+          "company": "Provident CRM",
+          "location": "Dublin, Condado de Dublin, Irlanda",
+          "role": "Desenvolvedor Júnior",
+          "startDate": "2021-07-01",
+          "endDate": "",
+          "contract": "Tempo-Integral",
+          "skills": {
+            "js": "JavaScript",
+            "jquery": "JQuery",
+            "css": "CSS",
+            "html": "HTML",
+            "php": "PHP",
+            "mysql": "MySQL",
+            "mssql": "MS SQL Server",
+            "react": "React.js",
+            "node": "Node.js",
+            "linux": "Linux",
+            "git": "Git",
+            "talend": "Talend Open Studio",
+            "sugarcrm": "Sugar CRM"
+          }
+        },
+        "item2": {
+          "company": "Provident CRM",
+          "location": "Dublin, Condado de Dublin, Irlanda",
+          "role": "Estágio de Desenvolvimento",
+          "startDate": "2021-01-01",
+          "endDate": "2021-06-30",
+          "contract": "Tempo-Integral",
+          "skills": {
+            "git": "Git",
+            "talend": "Talend Open Studio",
+            "sugarcrm": "Sugar CRM"
+          }
+        }
+      }
+    },
+    "education": {
+      "title": "Educação",
+      "sr-title": "Secção de Educação",
+      "data": {
+        "item1": {
+          "name": "Mestrado em Engenharia de Dados",
+          "startDate": "2024-09-16",
+          "endDate": "",
+          "organisation": "Instituto Superior de Engenharia do Porto"
+        },
+        "item2": {
+          "name": "Licenciatura em Engenharia Informática",
+          "startDate": "2020-09-16",
+          "endDate": "2023-09-29",
+          "organisation": "ISLA - Instituto Politécnico de Gestão e Tecnologia"
+        },
+        "item3": {
+          "name": "Diploma Técnico em Desenvolvimento de Software",
+          "startDate": "2018-07-01",
+          "endDate": "2019-12-01",
+          "organisation": "Etec Lauro Gomes"
+        }
+      }
+    },
+    "projects": {
+      "title": "Projetos",
+      "sr-title": "Secção de Projetos",
+      "data": {
+        "item1": {
+          "name": "Sistema Interno de Apoio à Habitação (HAP)",
+          "description": "Este projeto apoia as autoridades locais irlandesas na assistência habitacional a famílias com necessidades de longo prazo, incluindo beneficiários de Subsídio de Renda. Facilita candidaturas e avaliações de elegibilidade através de uma plataforma eficiente e amigável.",
+          "type": { "name": "Profissional", "style": "outline" },
+          "href": "",
+          "technologies": {
+            "javascript": "JavaScript",
+            "php": "PHP",
+            "jquery": "JQuery",
+            "backbonejs": "Backbone.js",
+            "underscorejs": "Underscore.js",
+            "mysql": "MySQL",
+            "sugarcrm": "Sugar CRM"
+          }
+        },
+        "item2": {
+          "name": "Portal de Candidaturas HAP",
+          "description": "Este projeto permite que famílias com necessidades de longo prazo e proprietários gerenciem efetivamente as suas candidaturas habitacionais.",
+          "type": { "name": "Profissional", "style": "outline" },
+          "href": "",
+          "technologies": {
+            "javascript": "JavaScript",
+            "node": "Node.js",
+            "react": "React.js",
+            "redis": "Redis"
+          }
+        },
+        "item3": {
+          "name": "Site de Concessionária de Automóveis",
+          "description": "Este projeto é um website simples para pequenas concessionárias de automóveis. O objetivo é oferecer um design limpo com funcionalidade mínima, permitindo que qualquer pessoa à procura de um carro veja as fotos e entre em contato com o concessionário caso tenha interesse.",
+          "type": { "name": "Pessoal", "style": "default" },
+          "href": "https://github.com/matheussreis/car-dealer-site",
+          "technologies": {
+            "react": "React.js",
+            "nextjs": "Next.js",
+            "tailwind": "Tailwind CSS",
+            "typescript": "TypeScript",
+            "nextintl": "next-intl"
+          }
+        },
+        "item4": {
+          "name": "Jogo do Galo",
+          "description": "Este projeto é uma implementação simples do popular jogo Jogo do Galo. A ideia deste projeto foi aplicar o Redux num projeto React utilizando TypeScript. Nesta implementação, há apenas o modo jogador contra jogador, onde dois utilizadores podem jogar no mesmo computador.",
+          "type": { "name": "Pessoal", "style": "default" },
+          "href": "https://github.com/matheussreis/tic-tac-toe-ts",
+          "technologies": {
+            "react": "React.js",
+            "vite": "Vite",
+            "tailwind": "Tailwind CSS",
+            "typescript": "TypeScript",
+            "redux": "Redux"
+          }
+        }
+      },
+      "buttons": {
+        "view-project": "Ver Projeto"
+      }
+    }
+  }
+}

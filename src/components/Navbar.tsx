@@ -12,6 +12,7 @@ import { Button } from './ui/Button';
 import { MenuIcon } from 'lucide-react';
 import ThemeSwitch from './ThemeSwitch';
 import { RefId, useAppContext } from '@/context';
+import LanguageSwitch from '@/components/LanguageSwitch';
 
 export default function Navbar() {
   const { scrollToSection, currentSection } = useAppContext();
@@ -45,6 +46,7 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <LanguageSwitch />
           <ThemeSwitch />
           <Sheet>
             <SheetTrigger asChild>
