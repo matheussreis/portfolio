@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection';
 import ExperienceSection from './components/ExperienceSection';
 import EducationSection from './components/EducationSection';
 import ProjectSection from './components/ProjectSection';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <EducationSection />
         <ProjectSection />
       </main>
+      <Footer />
     </>
   );
 }
