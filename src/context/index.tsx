@@ -8,6 +8,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { useScroll } from 'framer-motion';
 
 export type RefId = 'home' | 'experience' | 'education' | 'projects';
 
@@ -30,6 +31,8 @@ export function AppProvider({ children }: AppProviderProps) {
   const homeRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
   const educationRef = useRef<HTMLElement>(null);
+
+  const { scrollY } = useScroll();
 
   const refMapping = useMemo(
     () => ({
@@ -55,39 +58,30 @@ export function AppProvider({ children }: AppProviderProps) {
   );
 
   useEffect(() => {
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const visibleSection = entry.target.getAttribute(
-            'data-section'
-          ) as RefId;
-          if (visibleSection) {
-            setCurrentSection(visibleSection);
-          }
+    scrollY.on('change', () => {
+      let nearestSection: RefId | null = null;
+      let minDistance = Number.MAX_VALUE;
+
+      for (const key in refMapping) {
+        const ref = refMapping[key as RefId];
+
+        if (!ref.current) {
+          continue;
         }
-      });
-    };
 
-    const threshold = window.innerWidth < 768 ? 0.4 : 0.6;
-    const observer = new IntersectionObserver(observerCallback, {
-      root: null,
-      threshold: threshold,
-    });
+        const rect = ref.current.getBoundingClientRect();
+        const distance = Math.abs(rect.top);
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearestSection = key as RefId;
+        }
+      }
 
-    Object.keys(refMapping).forEach((key) => {
-      const ref = refMapping[key as RefId];
-      if (ref.current) {
-        ref.current.setAttribute('data-section', key);
-        observer.observe(ref.current);
+      if (nearestSection && nearestSection !== currentSection) {
+        setCurrentSection(nearestSection);
       }
     });
-
-    return () => {
-      Object.values(refMapping).forEach((ref) => {
-        if (ref.current) observer.unobserve(ref.current);
-      });
-    };
-  }, [refMapping]);
+  }, [scrollY, refMapping, currentSection]);
 
   return (
     <AppContext.Provider

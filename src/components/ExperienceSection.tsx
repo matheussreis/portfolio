@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
+import { motion } from 'framer-motion';
 import { useAppContext } from '@/context';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
@@ -19,7 +20,7 @@ export default function ExperienceSection() {
   const { refs } = useAppContext();
 
   return (
-    <section
+    <motion.section
       id="experience"
       ref={refs.experience}
       className="bg-secondary p-8 min-h-[50vh] text-secondary-foreground select-none sm:p-6 md:p-6"
@@ -58,7 +59,7 @@ export default function ExperienceSection() {
         )}
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </section>
+    </motion.section>
   );
 }
 

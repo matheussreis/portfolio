@@ -1,5 +1,3 @@
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import {
   Card,
   CardContent,
@@ -8,10 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
-import { projectKeys, projectTechnologyMapping } from '@/constants';
+import { motion } from 'framer-motion';
 import { useAppContext } from '@/context';
 import { ExternalLink } from 'lucide-react';
+import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@/components/ui/Button';
+import { projectKeys, projectTechnologyMapping } from '@/constants';
 
 const baseKey = 'sections.projects';
 
@@ -20,7 +21,7 @@ export default function ProjectSection() {
   const { refs } = useAppContext();
 
   return (
-    <section
+    <motion.section
       id="projects"
       ref={refs.projects}
       className="bg-secondary p-8 min-h-[50vh] text-secondary-foreground select-none sm:p-6 md:p-6"
@@ -55,7 +56,7 @@ export default function ProjectSection() {
         </div>
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </section>
+    </motion.section>
   );
 }
 

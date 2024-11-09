@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useAppContext } from '@/context';
 import { useTranslation } from 'react-i18next';
 
@@ -6,7 +7,7 @@ export default function HeroSection() {
   const { refs } = useAppContext();
 
   return (
-    <section
+    <motion.section
       id="home"
       ref={refs.home}
       className="text-primary-foreground bg-primary p-4 min-h-[50vh] md:min-h-[80vh] flex flex-col justify-center"
@@ -15,6 +16,6 @@ export default function HeroSection() {
         {t('sections.hero.description')}
       </h1>
       <span className="sr-only">{t('sections.hero.sr-title')}</span>
-    </section>
+    </motion.section>
   );
 }

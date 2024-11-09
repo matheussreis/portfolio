@@ -1,6 +1,7 @@
 {
   "system": {
     "settings": {
+      "siteName": "MSR",
       "date": {
         "currentDateText": "Atualmente"
       }

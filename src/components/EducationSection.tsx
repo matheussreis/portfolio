@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
+import { motion } from 'framer-motion';
 import { educationKeys } from '@/constants';
 import { useAppContext } from '@/context';
 import { GraduationCap } from 'lucide-react';
@@ -20,7 +21,7 @@ export default function EducationSection() {
   const { refs } = useAppContext();
 
   return (
-    <section
+    <motion.section
       id="education"
       ref={refs.education}
       className="bg-primary p-8 min-h-[50vh] select-none sm:p-6 md:p-6"
@@ -52,7 +53,7 @@ export default function EducationSection() {
         )}
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </section>
+    </motion.section>
   );
 }
 

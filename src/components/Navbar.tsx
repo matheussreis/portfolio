@@ -27,7 +27,9 @@ export default function Navbar() {
     <header className="h-16 w-full sticky top-0 bg-background select-none">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <a href="/" className="flex items-center gap-2">
-          <span className="text-xl font-semibold">MSR</span>
+          <span className="text-xl font-semibold">
+            {t('system.settings.siteName')}
+          </span>
         </a>
         <nav className="hidden items-center gap-4 md:flex">
           {items.map((item) => (
@@ -37,7 +39,8 @@ export default function Navbar() {
               onClick={() => scrollToSection(item.key as RefId)}
               className={cn(
                 'p-1',
-                currentSection === item.key ? 'font-extrabold text-md' : ''
+                currentSection === item.key ? 'font-extrabold text-md' : '',
+                'transition-all duration-800'
               )}
             >
               {item.label}
@@ -70,6 +73,7 @@ export default function Navbar() {
                     variant="none"
                     className={cn(
                       'justify-start p-0',
+                      'transition-all duration-800',
                       currentSection === item.key
                         ? 'font-extrabold text-md'
                         : ''
