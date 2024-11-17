@@ -26,15 +26,21 @@ export default function Navbar() {
   return (
     <header className="h-16 w-full sticky top-0 bg-background select-none">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
-        <a href="/" className="flex items-center gap-2">
+        <Button
+          type="button"
+          variant="none"
+          onClick={() => scrollToSection('home')}
+          className="flex items-center gap-2 p-0 m-0"
+        >
           <span className="text-xl font-semibold">
             {t('system.settings.siteName')}
           </span>
-        </a>
+        </Button>
         <nav className="hidden items-center gap-4 md:flex">
           {items.map((item) => (
             <Button
               key={item.key}
+              type="button"
               variant="none"
               onClick={() => scrollToSection(item.key as RefId)}
               className={cn(
