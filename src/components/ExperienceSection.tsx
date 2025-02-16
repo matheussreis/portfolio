@@ -97,7 +97,7 @@ function ExperienceItem({
         </div>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 w-full md:w-3/4">
           {skills.map((skill, index) => (
             <Badge key={index} variant="outline">
               {skill}

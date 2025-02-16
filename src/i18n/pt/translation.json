@@ -71,9 +71,36 @@
         "item1": {
           "company": "Provident CRM",
           "location": "Dublin, Condado de Dublin, Irlanda",
+          "role": "Analista de Software",
+          "startDate": "2025-02-01",
+          "endDate": "",
+          "contract": "Full-Time",
+          "skills": {
+            "js": "JavaScript",
+            "jquery": "JQuery",
+            "css": "CSS",
+            "html": "HTML",
+            "php": "PHP",
+            "symfony": "Symfony",
+            "mysql": "MySQL",
+            "mssql": "MS SQL Server",
+            "react": "React.js",
+            "node": "Node.js",
+            "linux": "Linux",
+            "git": "Git",
+            "scripting": "Bash Scripting",
+            "sugarcrm": "Sugar CRM",
+            "monday": "monday.com",
+            "support": "Apoio ao Cliente",
+            "talend": "Talend Open Studio"
+          }
+        },
+        "item2": {
+          "company": "Provident CRM",
+          "location": "Dublin, Condado de Dublin, Irlanda",
           "role": "Desenvolvedor Júnior",
           "startDate": "2021-07-01",
-          "endDate": "",
+          "endDate": "2025-01-01",
           "contract": "Tempo-Integral",
           "skills": {
             "js": "JavaScript",
@@ -81,6 +108,7 @@
             "css": "CSS",
             "html": "HTML",
             "php": "PHP",
+            "symfony": "Symfony",
             "mysql": "MySQL",
             "mssql": "MS SQL Server",
             "react": "React.js",
@@ -88,10 +116,11 @@
             "linux": "Linux",
             "git": "Git",
             "talend": "Talend Open Studio",
-            "sugarcrm": "Sugar CRM"
+            "sugarcrm": "Sugar CRM",
+            "monday": "monday.com"
           }
         },
-        "item2": {
+        "item3": {
           "company": "Provident CRM",
           "location": "Dublin, Condado de Dublin, Irlanda",
           "role": "Estágio de Desenvolvimento",
