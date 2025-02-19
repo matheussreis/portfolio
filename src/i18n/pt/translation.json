@@ -62,7 +62,11 @@
   "sections": {
     "hero": {
       "sr-title": "Secção de Apresentação",
-      "description": "👋 Olá, sou o Matheus, um Engenheiro Full Stack focado em construir aplicações limpas e orientadas a dados com PHP, JavaScript e React."
+      "name": "Matheus Reis",
+      "role": "Engenheiro de Software",
+      "buttons": {
+        "view-projects": "Veja meus Projetos!"
+      }
     },
     "experience": {
       "title": "Experiência",
@@ -80,7 +84,7 @@
               "contract": "Full-Time",
               "skills": {
                 "scripting": "Bash Scripting",
-                "sugarConsulting": "Consultoría SugarCRM",
+                "sugar-consulting": "Consultoría SugarCRM",
                 "support": "Apoio ao Cliente"
               }
             },

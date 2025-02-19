@@ -62,7 +62,11 @@
   "sections": {
     "hero": {
       "sr-title": "Hero Section",
-      "description": "👋 Hi, I am Matheus, a Full Stack Engineer focused on building clean, data-driven applications with PHP, JavaScript, and React."
+      "name": "Matheus Reis",
+      "role": "Software Engineer",
+      "buttons": {
+        "view-projects": "View My Projects!"
+      }
     },
     "experience": {
       "title": "Experience",
@@ -80,7 +84,7 @@
               "contract": "Full-Time",
               "skills": {
                 "scripting": "Bash Scripting",
-                "sugarConsulting": "SugarCRM Consulting",
+                "sugar-consulting": "SugarCRM Consulting",
                 "support": "Customer Support"
               }
             },
