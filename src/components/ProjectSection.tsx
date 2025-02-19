@@ -24,7 +24,7 @@ export default function ProjectSection() {
     <motion.section
       id="projects"
       ref={refs.projects}
-      className="bg-secondary p-8 min-h-[50vh] text-secondary-foreground select-none sm:p-6 md:p-6"
+      className="bg-secondary p-6 min-h-[50vh] text-secondary-foreground select-none lg:p-8"
     >
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t(`${baseKey}.title`)}

@@ -71,66 +71,52 @@
         "item1": {
           "company": "Provident CRM",
           "location": "Dublin, Condado de Dublin, Irlanda",
-          "role": "Analista de Software",
-          "startDate": "2025-02-01",
-          "endDate": "",
-          "contract": "Full-Time",
-          "skills": {
-            "js": "JavaScript",
-            "jquery": "JQuery",
-            "css": "CSS",
-            "html": "HTML",
-            "php": "PHP",
-            "symfony": "Symfony",
-            "mysql": "MySQL",
-            "mssql": "MS SQL Server",
-            "react": "React.js",
-            "node": "Node.js",
-            "linux": "Linux",
-            "git": "Git",
-            "scripting": "Bash Scripting",
-            "sugarcrm": "Sugar CRM",
-            "monday": "monday.com",
-            "support": "Apoio ao Cliente",
-            "talend": "Talend Open Studio"
-          }
-        },
-        "item2": {
-          "company": "Provident CRM",
-          "location": "Dublin, Condado de Dublin, Irlanda",
-          "role": "Desenvolvedor Júnior",
-          "startDate": "2021-07-01",
-          "endDate": "2025-01-01",
-          "contract": "Tempo-Integral",
-          "skills": {
-            "js": "JavaScript",
-            "jquery": "JQuery",
-            "css": "CSS",
-            "html": "HTML",
-            "php": "PHP",
-            "symfony": "Symfony",
-            "mysql": "MySQL",
-            "mssql": "MS SQL Server",
-            "react": "React.js",
-            "node": "Node.js",
-            "linux": "Linux",
-            "git": "Git",
-            "talend": "Talend Open Studio",
-            "sugarcrm": "Sugar CRM",
-            "monday": "monday.com"
-          }
-        },
-        "item3": {
-          "company": "Provident CRM",
-          "location": "Dublin, Condado de Dublin, Irlanda",
-          "role": "Estágio de Desenvolvimento",
-          "startDate": "2021-01-01",
-          "endDate": "2021-06-30",
-          "contract": "Tempo-Integral",
-          "skills": {
-            "git": "Git",
-            "talend": "Talend Open Studio",
-            "sugarcrm": "Sugar CRM"
+          "roles": {
+            "item1": {
+              "name": "Analista de Software",
+              "description": "Através da minha experiência com o SugarCRM e o desenvolvimento em React.js e Node.js, presto agora apoio ao cliente, comunicando com os clientes, investigando problemas, aplicando implementações e ajudando a equipa de suporte.",
+              "startDate": "2025-02-01",
+              "endDate": "",
+              "contract": "Full-Time",
+              "skills": {
+                "scripting": "Bash Scripting",
+                "sugarConsulting": "Consultoría SugarCRM",
+                "support": "Apoio ao Cliente"
+              }
+            },
+            "item2": {
+              "name": "Desenvolvedor Júnior",
+              "description": "Trabalhei em vários projetos SugarCRM, adicionando novas funcionalidades, integrando com outros sistemas e seguindo as melhores práticas de programação e metodologia ágil. Projetei e desenvolvi portais para clientes com React.js e Node.js, e mantive outros portais criados em Symfony.",
+              "startDate": "2021-07-01",
+              "endDate": "2025-01-01",
+              "contract": "Tempo-Integral",
+              "skills": {
+                "js": "JavaScript",
+                "jquery": "JQuery",
+                "css": "CSS",
+                "html": "HTML",
+                "php": "PHP",
+                "symfony": "Symfony",
+                "mysql": "MySQL",
+                "mssql": "MS SQL Server",
+                "react": "React.js",
+                "node": "Node.js",
+                "linux": "Linux",
+                "monday": "monday.com"
+              }
+            },
+            "item3": {
+              "name": "Estágio de Desenvolvimento",
+              "description": "Experiência prática com o SugarCRM e o Talend Open Studio, contribuindo para personalizações, integrações do CRM com clientes externos e migração de dados de fontes externas para o SugarCRM.",
+              "startDate": "2021-01-01",
+              "endDate": "2021-06-30",
+              "contract": "Tempo-Integral",
+              "skills": {
+                "git": "Git",
+                "talend": "Talend Open Studio",
+                "sugarcrm": "Sugar CRM"
+              }
+            }
           }
         }
       }
