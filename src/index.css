@@ -69,20 +69,20 @@ body {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
 @font-face {
   font-family: "JosefinSans";
   src: url('./fonts/JosefinSans-Regular.ttf'),
     url('./fonts/JosefinSans-Medium.ttf'),
     url('./fonts/JosefinSans-Bold.ttf'),
     url('./fonts/JosefinSans-SemiBold.ttf');
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }

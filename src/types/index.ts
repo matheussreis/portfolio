@@ -11,6 +11,10 @@ export type I18nEducationItemKey =
 export type I18nProjectItemKey =
   keyof typeof translation.sections.projects.data;
 
+export type I18nSkillItemKey = keyof typeof translation.sections.skills.data;
+
+export type I18nSkillTypeKey = keyof typeof translation.sections.skills.types;
+
 export type I18nNavbarItemKey = keyof typeof translation.layout.navbar.items;
 
 export type I18nRoleSkillMapping = {

@@ -24,9 +24,9 @@ export default function EducationSection() {
     <motion.section
       id="education"
       ref={refs.education}
-      className="bg-primary p-6 min-h-[50vh] select-none lg:p-8"
+      className="bg-secondary p-6 min-h-[50vh] select-none lg:p-8"
     >
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-foreground">
         {t(`${baseKey}.title`)}
       </h1>
       <div className="my-4 flex flex-col gap-4">
@@ -76,8 +76,8 @@ function EducationItem({
   return (
     <Card className="w-full">
       <CardHeader className="flex flex-col md:flex-row items-start md:items-center gap-4">
-        <div className="rounded-full bg-primary/10 p-2 md:p-3">
-          <GraduationCap className="h-8 w-8 md:h-10 md:w-10 text-primary" />
+        <div className="rounded-full bg-secondary/10 p-2 md:p-3">
+          <GraduationCap className="h-8 w-8 md:h-10 md:w-10 text-secondary-foreground" />
         </div>
         <div>
           <CardTitle className="text-xl md:text-2xl">{name}</CardTitle>

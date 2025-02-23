@@ -6,6 +6,7 @@ import {
   I18nNavbarItemKey,
   I18nProjectItemKey,
   I18nRoleSkillMapping,
+  I18nSkillItemKey,
   ThemeOptions,
 } from '@/types';
 
@@ -20,6 +21,10 @@ export const educationKeys = Object.keys(
 export const projectKeys = Object.keys(
   translation.sections.projects.data
 ) as Array<I18nProjectItemKey>;
+
+export const skillKeys = Object.keys(
+  translation.sections.skills.data
+) as Array<I18nSkillItemKey>;
 
 export const navbarItemKeys = Object.keys(
   translation.layout.navbar.items

@@ -29,6 +29,7 @@
       "items": {
         "home": "Início",
         "experience": "Experiência",
+        "skills": "Competências",
         "education": "Educação",
         "projects": "Projetos"
       },
@@ -122,6 +123,89 @@
               }
             }
           }
+        }
+      }
+    },
+    "skills": {
+      "title": "Competências",
+      "sr-title": "Secção de Competências",
+      "types": {
+        "professional": "Profissional",
+        "academic": "Académico",
+        "self-taught": "Autodidata"
+      },
+      "data": {
+        "html": {
+          "title": "HTML",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "css": {
+          "title": "CSS",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "js": {
+          "title": "JavaScript",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "typescript": {
+          "title": "TypeScript",
+          "type": ["self-taught"]
+        },
+        "jquery": {
+          "title": "JQuery",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "php": {
+          "title": "PHP",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "symfony": {
+          "title": "Symfony",
+          "type": ["professional", "self-taught"]
+        },
+        "mysql": {
+          "title": "MySQL",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "mssql": {
+          "title": "MS SQL Server",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "react": {
+          "title": "React.js",
+          "type": ["professional", "self-taught"]
+        },
+        "nextjs": {
+          "title": "Next.js",
+          "type": ["self-taught"]
+        },
+        "tailwind": {
+          "title": "Tailwind CSS",
+          "type": ["self-taught"]
+        },
+        "node": {
+          "title": "Node.js",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "linux": {
+          "title": "Linux",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "git": {
+          "title": "Git",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "talend": {
+          "title": "Talend Open Studio",
+          "type": ["professional"]
+        },
+        "sugarcrm": {
+          "title": "Sugar CRM",
+          "type": ["professional"]
+        },
+        "monday": {
+          "title": "monday.com",
+          "type": ["professional"]
         }
       }
     },
