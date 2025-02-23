@@ -6,12 +6,11 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
-import { educationKeys } from '@/constants';
 import { useAppContext } from '@/context';
+import { I18nEducationItem } from '@/types';
 import { GraduationCap } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
-import { I18nEducationItemKey } from '@/types';
 import { useDateFormatter } from '@/hooks/use-date-formatter';
 
 const baseKey = 'sections.education';
@@ -19,6 +18,10 @@ const baseKey = 'sections.education';
 export default function EducationSection() {
   const { t } = useTranslation();
   const { refs } = useAppContext();
+
+  const educationItems = t(`${baseKey}.data`, {
+    returnObjects: true,
+  }) as I18nEducationItem[];
 
   return (
     <motion.section
@@ -30,27 +33,17 @@ export default function EducationSection() {
         {t(`${baseKey}.title`)}
       </h1>
       <div className="my-4 flex flex-col gap-4">
-        {educationKeys.map(
-          (experience: I18nEducationItemKey, index: number) => {
-            return (
-              <EducationItem
-                key={t(`${baseKey}.title`) + `-${index}`}
-                name={t(`${baseKey}.data.${experience}.name`)}
-                organisation={t(`${baseKey}.data.${experience}.organisation`)}
-                startDate={
-                  new Date(
-                    t(`${baseKey}.data.${experience}.startDate`) ?? undefined
-                  )
-                }
-                endDate={
-                  t(`${baseKey}.data.${experience}.endDate`)
-                    ? new Date(t(`${baseKey}.data.${experience}.endDate`))
-                    : null
-                }
-              />
-            );
-          }
-        )}
+        {educationItems.map((item: I18nEducationItem, index: number) => {
+          return (
+            <EducationItem
+              key={`${item.name}-${index}`}
+              name={item.name}
+              organisation={item.organisation}
+              startDate={new Date(item.startDate ?? undefined)}
+              endDate={item.endDate ? new Date(item.endDate) : null}
+            />
+          );
+        })}
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
     </motion.section>

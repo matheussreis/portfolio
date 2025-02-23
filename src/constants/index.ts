@@ -1,7 +1,6 @@
 import translation from '@/i18n/en/translation.json';
 import {
   I18nCompanyRoleMapping,
-  I18nEducationItemKey,
   I18nExperienceItemKey,
   I18nNavbarItemKey,
   I18nProjectItemKey,
@@ -13,10 +12,6 @@ import {
 export const themeOptions = Object.keys(
   translation.system.themes.options
 ) as ThemeOptions[];
-
-export const educationKeys = Object.keys(
-  translation.sections.education.data
-) as Array<I18nEducationItemKey>;
 
 export const projectKeys = Object.keys(
   translation.sections.projects.data

@@ -212,20 +212,20 @@
     "education": {
       "title": "Education",
       "sr-title": "Education Section",
-      "data": {
-        "item1": {
+      "data": [
+        {
           "name": "Bachelor's Degree, Computer Engineering",
           "startDate": "2020-09-16",
           "endDate": "2023-09-29",
           "organisation": "ISLA - Instituto Politécnico de Gestão e Tecnologia"
         },
-        "item2": {
+        {
           "name": "Technical Diploma in Software Development",
           "startDate": "2018-07-01",
           "endDate": "2019-12-01",
           "organisation": "Etec Lauro Gomes"
         }
-      }
+      ]
     },
     "projects": {
       "title": "Projects",

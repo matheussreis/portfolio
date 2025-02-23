@@ -5,8 +5,12 @@ export type ThemeOptions = keyof typeof translation.system.themes.options;
 export type I18nExperienceItemKey =
   keyof typeof translation.sections.experience.data;
 
-export type I18nEducationItemKey =
-  keyof typeof translation.sections.education.data;
+export type I18nEducationItem = {
+  name: string;
+  startDate: string;
+  endDate: string;
+  organisation: string;
+};
 
 export type I18nProjectItemKey =
   keyof typeof translation.sections.projects.data;
