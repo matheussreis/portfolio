@@ -72,59 +72,55 @@
     "experience": {
       "title": "Experience",
       "sr-title": "Experience Section",
-      "data": {
-        "item1": {
+      "data": [
+        {
           "company": "Provident CRM",
           "location": "Dublin, County Dublin, Ireland",
-          "roles": {
-            "item1": {
+          "roles": [
+            {
               "name": "Software Engineer Analyst",
               "description": "Built on my experience with SugarCRM and React.js & Node.js development, now provide customer support by communicating with clients, investigating issues, applying deployments, and assisting the support team.",
               "startDate": "2025-02-01",
               "endDate": "",
               "contract": "Full-Time",
-              "skills": {
-                "scripting": "Bash Scripting",
-                "sugar-consulting": "SugarCRM Consulting",
-                "support": "Customer Support"
-              }
+              "skills": [
+                "Bash Scripting",
+                "SugarCRM Consulting",
+                "Customer Support"
+              ]
             },
-            "item2": {
+            {
               "name": "Junior Software Engineer",
               "description": "Worked on several SugarCRM projects, adding new features, integrating with other systems, and following best coding practices and Agile methodology. Designed and developed customer portals with React.js and Node.js, and maintained other portals built with Symfony.",
               "startDate": "2021-07-01",
               "endDate": "2025-01-01",
               "contract": "Full-Time",
-              "skills": {
-                "js": "JavaScript",
-                "jquery": "JQuery",
-                "css": "CSS",
-                "html": "HTML",
-                "php": "PHP",
-                "symfony": "Symfony",
-                "mysql": "MySQL",
-                "mssql": "MS SQL Server",
-                "react": "React.js",
-                "node": "Node.js",
-                "linux": "Linux",
-                "monday": "monday.com"
-              }
+              "skills": [
+                "JavaScript",
+                "JQuery",
+                "CSS",
+                "HTML",
+                "PHP",
+                "Symfony",
+                "MySQL",
+                "MS SQL Server",
+                "React.js",
+                "Node.js",
+                "Linux",
+                "monday.com"
+              ]
             },
-            "item3": {
+            {
               "name": "Software Development Intern",
               "description": "Hands-on experience with SugarCRM and Talend Open Studio, contributing to customisations, CRM integrations with external clients, and data migration from external sources into SugarCRM.",
               "startDate": "2021-01-01",
               "endDate": "2021-06-30",
               "contract": "Full-Time",
-              "skills": {
-                "git": "Git",
-                "talend": "Talend Open Studio",
-                "sugarcrm": "Sugar CRM"
-              }
+              "skills": ["Git", "Talend Open Studio", "Sugar CRM"]
             }
-          }
+          ]
         }
-      }
+      ]
     },
     "skills": {
       "title": "Skills",

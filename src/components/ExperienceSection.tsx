@@ -7,16 +7,20 @@ import {
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
 import { useAppContext } from '@/context';
+import { I18nExperienceItem } from '@/types';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
 import { useDateFormatter } from '@/hooks/use-date-formatter';
-import { companyKeys, companyRoleMapping, roleSkillMapping } from '@/constants';
 
-const sectionDataKey = 'sections.experience.data';
+const baseKey = 'sections.experience';
 
 export default function ExperienceSection() {
   const { t } = useTranslation('translation');
   const { refs } = useAppContext();
+
+  const educationItems = t(`${baseKey}.data`, {
+    returnObjects: true,
+  }) as I18nExperienceItem[];
 
   return (
     <motion.section
@@ -28,60 +32,32 @@ export default function ExperienceSection() {
         {t('sections.experience.title')}
       </h1>
       <div className="my-4 flex flex-col gap-4 bg-[var(--primary-color-foreground)]">
-        {companyKeys.map((companyKey) => (
-          <Card className="w-full" key={companyKey}>
+        {educationItems.map((item) => (
+          <Card className="w-full" key={item.company}>
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl text-primary m-0">
-                {t(`${sectionDataKey}.${companyKey}.company`)}
+                {item.company}
               </CardTitle>
               <CardDescription className="text-md">
-                {t(`${sectionDataKey}.${companyKey}.location`)}
+                {item.location}
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
-              {companyRoleMapping[companyKey].map((roleKey, index) => {
-                const skills = roleSkillMapping[roleKey].map((skillKey) => {
-                  return t(
-                    `${sectionDataKey}.${companyKey}.roles.${roleKey}.skills.${skillKey}` as never
-                  );
-                });
-
-                return (
-                  <ExperienceItem
-                    key={`${t('sections.experience.title')}-${index}`}
-                    description={t(
-                      `${sectionDataKey}.${companyKey}.roles.${roleKey}.description`
-                    )}
-                    role={t(
-                      `${sectionDataKey}.${companyKey}.roles.${roleKey}.name`
-                    )}
-                    skills={skills}
-                    startDate={
-                      new Date(
-                        t(
-                          `${sectionDataKey}.${companyKey}.roles.${roleKey}.startDate`
-                        ) ?? undefined
-                      )
-                    }
-                    endDate={
-                      t(
-                        `${sectionDataKey}.${companyKey}.roles.${roleKey}.endDate`
-                      )
-                        ? new Date(
-                            t(
-                              `${sectionDataKey}.${companyKey}.roles.${roleKey}.endDate`
-                            )
-                          )
-                        : null
-                    }
-                  />
-                );
-              })}
+              {item.roles.map((role, index) => (
+                <ExperienceItem
+                  key={`${role.name}-${index}`}
+                  description={role.description}
+                  role={role.name}
+                  skills={role.skills}
+                  startDate={new Date(role.startDate ?? undefined)}
+                  endDate={role.endDate ? new Date(role.endDate) : null}
+                />
+              ))}
             </CardContent>
           </Card>
         ))}
       </div>
-      <span className="sr-only">{t('sections.experience.sr-title')}</span>
+      <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
     </motion.section>
   );
 }
