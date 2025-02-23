@@ -3,7 +3,6 @@ import {
   I18nCompanyRoleMapping,
   I18nExperienceItemKey,
   I18nNavbarItemKey,
-  I18nProjectItemKey,
   I18nRoleSkillMapping,
   I18nSkillItemKey,
   ThemeOptions,
@@ -12,10 +11,6 @@ import {
 export const themeOptions = Object.keys(
   translation.system.themes.options
 ) as ThemeOptions[];
-
-export const projectKeys = Object.keys(
-  translation.sections.projects.data
-) as Array<I18nProjectItemKey>;
 
 export const skillKeys = Object.keys(
   translation.sections.skills.data
@@ -46,10 +41,3 @@ export const companyRoleMapping = Object.fromEntries(
     ]
   )
 ) as I18nCompanyRoleMapping;
-
-export const projectTechnologyMapping = Object.fromEntries(
-  Object.entries(translation.sections.projects.data).map(([key, item]) => [
-    key as I18nProjectItemKey,
-    Object.keys(item.technologies || {}),
-  ])
-) as Record<I18nProjectItemKey, Array<string>>;

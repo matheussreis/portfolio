@@ -12,6 +12,14 @@ export type I18nEducationItem = {
   organisation: string;
 };
 
+export type I18nProjectItem = {
+  name: string;
+  description: string;
+  type: { name: string; style: 'default' | 'outline' };
+  href?: string;
+  technologies: string[];
+};
+
 export type I18nProjectItemKey =
   keyof typeof translation.sections.projects.data;
 
