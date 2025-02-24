@@ -7,12 +7,12 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
+import { I18nProjectItem } from '@/types';
 import { useAppContext } from '@/context';
 import { ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
-import { projectKeys, projectTechnologyMapping } from '@/constants';
 
 const baseKey = 'sections.projects';
 
@@ -20,36 +20,30 @@ export default function ProjectSection() {
   const { t } = useTranslation();
   const { refs } = useAppContext();
 
+  const projectItems = t(`${baseKey}.data`, {
+    returnObjects: true,
+  }) as I18nProjectItem[];
+
   return (
     <motion.section
       id="projects"
       ref={refs.projects}
-      className="bg-secondary p-8 min-h-[50vh] text-secondary-foreground select-none sm:p-6 md:p-6"
+      className="bg-primary p-6 min-h-[50vh] text-primary-foreground select-none lg:p-8"
     >
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t(`${baseKey}.title`)}
       </h1>
       <div className="my-4">
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-          {projectKeys.map((projectKey) => {
-            const technologies = projectTechnologyMapping[projectKey].map(
-              (technology) =>
-                t(
-                  `${baseKey}.data.${projectKey}.technologies.${technology}` as 'sections.projects.data.item1.technologies.php'
-                )
-            );
-
+          {projectItems.map((project) => {
             return (
               <ProjectListItem
-                key={projectKey}
-                title={t(`${baseKey}.data.${projectKey}.name`)}
-                type={t(`${baseKey}.data.${projectKey}.type.name`)}
-                typeClassName={
-                  t(`${baseKey}.data.${projectKey}.type.style`) as 'default'
-                }
-                description={t(`${baseKey}.data.${projectKey}.description`)}
-                technologies={technologies}
-                href={t(`${baseKey}.data.${projectKey}.href`)}
+                key={project.name}
+                name={project.name}
+                type={project.type}
+                description={project.description}
+                technologies={project.technologies}
+                href={project.href}
               />
             );
           })}
@@ -60,33 +54,23 @@ export default function ProjectSection() {
   );
 }
 
-interface ProjectListItemProps {
-  title: string;
-  type: string;
-  description: string;
-  technologies: Array<string>;
-  typeClassName: 'outline' | 'default';
-  href?: string;
-}
-
 function ProjectListItem({
-  title,
+  name,
   type,
   description,
   technologies,
-  typeClassName,
   href,
-}: ProjectListItemProps) {
+}: I18nProjectItem) {
   const { t } = useTranslation();
 
   return (
     <Card className="flex flex-col gap-2 w-full">
       <CardHeader>
         <div className="flex flex-col gap-3 items-baseline">
-          <Badge className="rounded-xs" variant={typeClassName}>
-            {type}
+          <Badge className="rounded-xs" variant={type.style}>
+            {type.name}
           </Badge>
-          <CardTitle className="text-xl">{title}</CardTitle>
+          <CardTitle className="text-xl">{name}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="flex-grow">

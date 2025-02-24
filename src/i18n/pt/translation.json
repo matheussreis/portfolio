@@ -29,6 +29,7 @@
       "items": {
         "home": "Início",
         "experience": "Experiência",
+        "skills": "Competências",
         "education": "Educação",
         "projects": "Projetos"
       },
@@ -62,126 +63,219 @@
   "sections": {
     "hero": {
       "sr-title": "Secção de Apresentação",
-      "description": "👋 Olá, sou o Matheus, um Engenheiro Full Stack focado em construir aplicações limpas e orientadas a dados com PHP, JavaScript e React."
+      "name": "Matheus Reis",
+      "role": "Engenheiro de Software",
+      "buttons": {
+        "view-projects": "Veja meus Projetos!"
+      }
     },
     "experience": {
       "title": "Experiência",
       "sr-title": "Secção de Experiência",
+      "data": [
+        {
+          "company": "Provident CRM",
+          "location": "Dublin, Condado de Dublin, Irlanda",
+          "roles": [
+            {
+              "name": "Analista de Software",
+              "description": "Através da minha experiência com o SugarCRM e o desenvolvimento em React.js e Node.js, presto agora apoio ao cliente, comunicando com os clientes, investigando problemas, aplicando implementações e ajudando a equipa de suporte.",
+              "startDate": "2025-02-01",
+              "endDate": "",
+              "contract": "Full-Time",
+              "skills": [
+                "Bash Scripting",
+                "Consultoría SugarCRM",
+                "Apoio ao Cliente"
+              ]
+            },
+            {
+              "name": "Desenvolvedor Júnior",
+              "description": "Trabalhei em vários projetos SugarCRM, adicionando novas funcionalidades, integrando com outros sistemas e seguindo as melhores práticas de programação e metodologia ágil. Projetei e desenvolvi portais para clientes com React.js e Node.js, e mantive outros portais criados em Symfony.",
+              "startDate": "2021-07-01",
+              "endDate": "2025-01-01",
+              "contract": "Tempo-Integral",
+              "skills": [
+                "JavaScript",
+                "JQuery",
+                "CSS",
+                "HTML",
+                "PHP",
+                "Symfony",
+                "MySQL",
+                "MS SQL Server",
+                "React.js",
+                "Node.js",
+                "Linux",
+                "monday.com"
+              ]
+            },
+            {
+              "name": "Estágio de Desenvolvimento",
+              "description": "Experiência prática com o SugarCRM e o Talend Open Studio, contribuindo para personalizações, integrações do CRM com clientes externos e migração de dados de fontes externas para o SugarCRM.",
+              "startDate": "2021-01-01",
+              "endDate": "2021-06-30",
+              "contract": "Tempo-Integral",
+              "skills": ["Git", "Talend Open Studio", "Sugar CRM"]
+            }
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Competências",
+      "sr-title": "Secção de Competências",
+      "types": {
+        "professional": "Profissional",
+        "academic": "Académico",
+        "self-taught": "Autodidata"
+      },
       "data": {
-        "item1": {
-          "company": "Provident CRM",
-          "location": "Dublin, Condado de Dublin, Irlanda",
-          "role": "Desenvolvedor Júnior",
-          "startDate": "2021-07-01",
-          "endDate": "",
-          "contract": "Tempo-Integral",
-          "skills": {
-            "js": "JavaScript",
-            "jquery": "JQuery",
-            "css": "CSS",
-            "html": "HTML",
-            "php": "PHP",
-            "mysql": "MySQL",
-            "mssql": "MS SQL Server",
-            "react": "React.js",
-            "node": "Node.js",
-            "linux": "Linux",
-            "git": "Git",
-            "talend": "Talend Open Studio",
-            "sugarcrm": "Sugar CRM"
-          }
+        "html": {
+          "title": "HTML",
+          "type": ["professional", "academic", "self-taught"]
         },
-        "item2": {
-          "company": "Provident CRM",
-          "location": "Dublin, Condado de Dublin, Irlanda",
-          "role": "Estágio de Desenvolvimento",
-          "startDate": "2021-01-01",
-          "endDate": "2021-06-30",
-          "contract": "Tempo-Integral",
-          "skills": {
-            "git": "Git",
-            "talend": "Talend Open Studio",
-            "sugarcrm": "Sugar CRM"
-          }
+        "css": {
+          "title": "CSS",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "js": {
+          "title": "JavaScript",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "typescript": {
+          "title": "TypeScript",
+          "type": ["self-taught"]
+        },
+        "jquery": {
+          "title": "JQuery",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "php": {
+          "title": "PHP",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "symfony": {
+          "title": "Symfony",
+          "type": ["professional", "self-taught"]
+        },
+        "mysql": {
+          "title": "MySQL",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "mssql": {
+          "title": "MS SQL Server",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "react": {
+          "title": "React.js",
+          "type": ["professional", "self-taught"]
+        },
+        "nextjs": {
+          "title": "Next.js",
+          "type": ["self-taught"]
+        },
+        "tailwind": {
+          "title": "Tailwind CSS",
+          "type": ["self-taught"]
+        },
+        "node": {
+          "title": "Node.js",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "linux": {
+          "title": "Linux",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "git": {
+          "title": "Git",
+          "type": ["professional", "academic", "self-taught"]
+        },
+        "talend": {
+          "title": "Talend Open Studio",
+          "type": ["professional"]
+        },
+        "sugarcrm": {
+          "title": "Sugar CRM",
+          "type": ["professional"]
+        },
+        "monday": {
+          "title": "monday.com",
+          "type": ["professional"]
         }
       }
     },
     "education": {
       "title": "Educação",
       "sr-title": "Secção de Educação",
-      "data": {
-        "item1": {
+      "data": [
+        {
           "name": "Licenciatura em Engenharia Informática",
           "startDate": "2020-09-16",
           "endDate": "2023-09-29",
           "organisation": "ISLA - Instituto Politécnico de Gestão e Tecnologia"
         },
-        "item2": {
+        {
           "name": "Diploma Técnico em Desenvolvimento de Software",
           "startDate": "2018-07-01",
           "endDate": "2019-12-01",
           "organisation": "Etec Lauro Gomes"
         }
-      }
+      ]
     },
     "projects": {
       "title": "Projetos",
       "sr-title": "Secção de Projetos",
-      "data": {
-        "item1": {
+      "data": [
+        {
           "name": "Sistema Interno de Apoio à Habitação (HAP)",
           "description": "Este projeto apoia as autoridades locais irlandesas na assistência habitacional a famílias com necessidades de longo prazo, incluindo beneficiários de Subsídio de Renda. Facilita candidaturas e avaliações de elegibilidade através de uma plataforma eficiente e amigável.",
           "type": { "name": "Profissional", "style": "default" },
           "href": "",
-          "technologies": {
-            "javascript": "JavaScript",
-            "php": "PHP",
-            "jquery": "JQuery",
-            "backbonejs": "Backbone.js",
-            "underscorejs": "Underscore.js",
-            "mysql": "MySQL",
-            "sugarcrm": "Sugar CRM"
-          }
+          "technologies": [
+            "JavaScript",
+            "PHP",
+            "JQuery",
+            "Backbone.js",
+            "Underscore.js",
+            "MySQL",
+            "Sugar CRM"
+          ]
         },
-        "item2": {
+        {
           "name": "Portal de Candidaturas HAP",
           "description": "Este projeto permite que famílias com necessidades de longo prazo e proprietários gerenciem efetivamente as suas candidaturas habitacionais.",
           "type": { "name": "Profissional", "style": "default" },
           "href": "",
-          "technologies": {
-            "javascript": "JavaScript",
-            "node": "Node.js",
-            "react": "React.js",
-            "redis": "Redis"
-          }
+          "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
-        "item3": {
+        {
           "name": "Site de Concessionária de Automóveis",
           "description": "Este projeto é um website simples para pequenas concessionárias de automóveis. O objetivo é oferecer um design limpo com funcionalidade mínima, permitindo que qualquer pessoa à procura de um carro veja as fotos e entre em contato com o concessionário caso tenha interesse.",
           "type": { "name": "Pessoal", "style": "outline" },
           "href": "https://github.com/matheussreis/car-dealer-site",
-          "technologies": {
-            "react": "React.js",
-            "nextjs": "Next.js",
-            "tailwind": "Tailwind CSS",
-            "typescript": "TypeScript",
-            "nextintl": "next-intl"
-          }
+          "technologies": [
+            "React.js",
+            "Next.js",
+            "Tailwind CSS",
+            "TypeScript",
+            "next-intl"
+          ]
         },
-        "item4": {
+        {
           "name": "Jogo do Galo",
           "description": "Este projeto é uma implementação simples do popular jogo Jogo do Galo. A ideia deste projeto foi aplicar o Redux num projeto React utilizando TypeScript. Nesta implementação, há apenas o modo jogador contra jogador, onde dois utilizadores podem jogar no mesmo computador.",
           "type": { "name": "Pessoal", "style": "outline" },
           "href": "https://github.com/matheussreis/tic-tac-toe-ts",
-          "technologies": {
-            "react": "React.js",
-            "vite": "Vite",
-            "tailwind": "Tailwind CSS",
-            "typescript": "TypeScript",
-            "redux": "Redux"
-          }
+          "technologies": [
+            "React.js",
+            "Vite",
+            "Tailwind CSS",
+            "TypeScript",
+            "Redux"
+          ]
         }
-      },
+      ],
       "buttons": {
         "view-project": "Ver Projeto"
       }

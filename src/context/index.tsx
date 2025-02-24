@@ -10,7 +10,7 @@ import {
 } from 'react';
 import { useScroll } from 'framer-motion';
 
-export type RefId = 'home' | 'experience' | 'education' | 'projects';
+export type RefId = 'home' | 'experience' | 'education' | 'projects' | 'skills';
 
 export type AppContextType = {
   scrollToSection: (elementId: RefId) => void;
@@ -31,6 +31,7 @@ export function AppProvider({ children }: AppProviderProps) {
   const homeRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
   const educationRef = useRef<HTMLElement>(null);
+  const skillRef = useRef<HTMLElement>(null);
 
   const { scrollY } = useScroll();
 
@@ -40,6 +41,7 @@ export function AppProvider({ children }: AppProviderProps) {
       home: homeRef,
       experience: experienceRef,
       education: educationRef,
+      skills: skillRef,
     }),
     []
   );

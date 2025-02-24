@@ -1,10 +1,10 @@
 import './index.css';
 import App from './App.tsx';
 import { createRoot } from 'react-dom/client';
-import { AppProvider } from './context/index.tsx';
-import { defaultNS, i18n } from '@/i18n/index.ts';
-import { ThemeProvider } from './components/ThemeProvider.tsx';
 import { I18nextProvider } from 'react-i18next';
+import { AppProvider } from '@/context/index.tsx';
+import { defaultNS, i18n } from '@/i18n/index.ts';
+import { ThemeProvider } from '@/components/ThemeProvider.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
