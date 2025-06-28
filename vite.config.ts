@@ -11,4 +11,21 @@ export default defineConfig({
     },
   },
   base: '/portfolio/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (
+            id.includes('src/icons/') ||
+            id.includes('react-icons') ||
+            id.includes('lucide-react')
+          )
+            return 'icons';
+          if (id.includes('i18next') || id.includes('src/i18n/')) return 'lang';
+          if (id.includes('src/components/')) return 'components';
+          if (id.includes('node_modules')) return 'vendor';
+        },
+      },
+    },
+  },
 });
