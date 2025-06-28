@@ -1,10 +1,13 @@
+import { lazy, Suspense } from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import Spinner from './components/ui/Spinner';
 import HeroSection from '@/components/HeroSection';
-import SkillSection from '@/components/SkillSection';
-import ProjectSection from '@/components/ProjectSection';
-import EducationSection from '@/components/EducationSection';
-import ExperienceSection from '@/components/ExperienceSection';
+
+const SkillSection = lazy(() => import('@/components/SkillSection'));
+const ProjectSection = lazy(() => import('@/components/ProjectSection'));
+const EducationSection = lazy(() => import('@/components/EducationSection'));
+const ExperienceSection = lazy(() => import('@/components/ExperienceSection'));
 
 export default function App() {
   return (
@@ -12,10 +15,12 @@ export default function App() {
       <Navbar />
       <main className="flex-grow min-h-screen">
         <HeroSection />
-        <ExperienceSection />
-        <SkillSection />
-        <EducationSection />
-        <ProjectSection />
+        <Suspense fallback={<Spinner />}>
+          <ExperienceSection />
+          <SkillSection />
+          <EducationSection />
+          <ProjectSection />
+        </Suspense>
       </main>
       <Footer />
     </>
