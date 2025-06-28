@@ -75,6 +75,7 @@ body {
     url('./fonts/JosefinSans-Medium.ttf'),
     url('./fonts/JosefinSans-Bold.ttf'),
     url('./fonts/JosefinSans-SemiBold.ttf');
+  font-display: swap;
 }
 
 @layer base {
