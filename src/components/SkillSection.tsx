@@ -164,7 +164,7 @@ function SkillSectionItem({ title, skillKey, types }: SkillSectionItemProps) {
         <div className="flex flex-col gap-2 h-full">
           <div className="flex flex-col items-center justify-center text-center h-full gap-4">
             {iconSkillMapping[skillKey]}
-            <h3 className="text-xs">{title}</h3>
+            <h2 className="text-xs">{title}</h2>
           </div>
           <div className="flex flex-row gap-1 justify-center">
             {types.map((type) => {
