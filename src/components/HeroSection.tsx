@@ -14,7 +14,7 @@ export default function HeroSection() {
       className="text-primary-foreground bg-primary p-4 min-h-[50vh] md:min-h-[80vh] flex flex-col justify-center items-center gap-6"
     >
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-primary-foreground font-extrabold text-5xl md:text-6xl lg:text-7xl select-none">
+        <h1 className="text-center text-primary-foreground font-extrabold text-5xl md:text-6xl lg:text-7xl select-none">
           {t('sections.hero.name')}
         </h1>
         <h2 className="text-primary-foreground/75 font-semibold text-2xl md:text-3xl lg:text-4xl select-none">
