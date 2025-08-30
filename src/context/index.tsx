@@ -49,12 +49,12 @@ export function AppProvider({ children }: AppProviderProps) {
   const scrollToSection = useCallback(
     (elementId: RefId) => {
       const ref = refMapping[elementId];
-      if (ref?.current) {
-        setCurrentSection(elementId);
-        ref.current.scrollIntoView({
-          behavior: 'smooth',
-        });
+      if (elementId === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (ref?.current) {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
       }
+      setCurrentSection(elementId);
     },
     [refMapping]
   );
