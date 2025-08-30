@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
-import { useAppContext } from '@/context';
+import { useScrollContext } from '@/context';
 import { I18nEducationItem } from '@/types';
 import { GraduationCap } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
@@ -17,7 +17,7 @@ const baseKey = 'sections.education';
 
 export default function EducationSection() {
   const { t } = useTranslation();
-  const { refs } = useAppContext();
+  const { refs } = useScrollContext();
 
   const educationItems = t(`${baseKey}.data`, {
     returnObjects: true,

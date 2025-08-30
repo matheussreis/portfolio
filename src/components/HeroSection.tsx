@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { useAppContext } from '@/context';
+import { useScrollContext } from '@/context';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
 
 export default function HeroSection() {
   const { t } = useTranslation();
-  const { refs, scrollToSection } = useAppContext();
+  const { refs, scrollToSection } = useScrollContext();
 
   return (
     <motion.section

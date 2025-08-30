@@ -9,13 +9,13 @@ import { cn } from '@/lib/utils';
 import { Button } from './ui/Button';
 import { MenuIcon } from 'lucide-react';
 import ThemeSwitch from './ThemeSwitch';
-import { RefId, useAppContext } from '@/context';
+import { RefId, useScrollContext } from '@/context';
 import LanguageSwitch from '@/components/LanguageSwitch';
 import { navbarItemKeys } from '@/constants';
 import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
-  const { scrollToSection, currentSection } = useAppContext();
+  const { scrollToSection, currentSection } = useScrollContext();
   const { t } = useTranslation();
 
   const items = navbarItemKeys.map((item) => ({

@@ -12,19 +12,22 @@ import { useScroll } from 'framer-motion';
 
 export type RefId = 'home' | 'experience' | 'education' | 'projects' | 'skills';
 
-export type AppContextType = {
+
+export type ScrollContextType = {
   scrollToSection: (elementId: RefId) => void;
   refs: Record<RefId, RefObject<HTMLElement>>;
   currentSection: RefId;
 };
 
-const AppContext = createContext<AppContextType | undefined>(undefined);
 
-interface AppProviderProps {
+const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
+
+
+interface ScrollProviderProps {
   children: React.ReactNode;
 }
 
-export function AppProvider({ children }: AppProviderProps) {
+export function ScrollProvider({ children }: ScrollProviderProps) {
   const [currentSection, setCurrentSection] = useState<RefId>('home');
 
   const projectsRef = useRef<HTMLElement>(null);
@@ -86,7 +89,7 @@ export function AppProvider({ children }: AppProviderProps) {
   }, [scrollY, refMapping, currentSection]);
 
   return (
-    <AppContext.Provider
+    <ScrollContext.Provider
       value={{
         scrollToSection,
         refs: refMapping,
@@ -94,13 +97,14 @@ export function AppProvider({ children }: AppProviderProps) {
       }}
     >
       {children}
-    </AppContext.Provider>
+    </ScrollContext.Provider>
   );
 }
 
-export const useAppContext = () => {
-  const context = useContext(AppContext);
+
+export const useScrollContext = () => {
+  const context = useContext(ScrollContext);
   if (!context)
-    throw new Error('useAppContext must be used within AppProvider');
+    throw new Error('useScrollContext must be used within ScrollProvider');
   return context;
 };

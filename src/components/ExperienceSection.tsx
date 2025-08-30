@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
-import { useAppContext } from '@/context';
+import { useScrollContext } from '@/context';
 import { I18nExperienceItem } from '@/types';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +16,7 @@ const baseKey = 'sections.experience';
 
 export default function ExperienceSection() {
   const { t } = useTranslation('translation');
-  const { refs } = useAppContext();
+  const { refs } = useScrollContext();
 
   const educationItems = t(`${baseKey}.data`, {
     returnObjects: true,

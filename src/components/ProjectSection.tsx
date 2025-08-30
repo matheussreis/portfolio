@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
 import { I18nProjectItem } from '@/types';
-import { useAppContext } from '@/context';
+import { useScrollContext } from '@/context';
 import { ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +18,7 @@ const baseKey = 'sections.projects';
 
 export default function ProjectSection() {
   const { t } = useTranslation();
-  const { refs } = useAppContext();
+  const { refs } = useScrollContext();
 
   const projectItems = t(`${baseKey}.data`, {
     returnObjects: true,

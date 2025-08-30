@@ -21,7 +21,7 @@ import { skillKeys } from '@/constants';
 import SugarCrm from '@/icons/SugarCrm';
 import { CgMonday } from 'react-icons/cg';
 import { SiTalend } from 'react-icons/si';
-import { useAppContext } from '@/context';
+import { useScrollContext } from '@/context';
 import { useTranslation } from 'react-i18next';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { VariantProps } from 'class-variance-authority';
@@ -88,7 +88,7 @@ const badgeSkillTypeVariantMapping: Record<
 
 export default function SkillSection() {
   const { t } = useTranslation();
-  const { refs } = useAppContext();
+  const { refs } = useScrollContext();
 
   const skillTypeKeys = Object.keys(
     t(`${baseKey}.types`, {
