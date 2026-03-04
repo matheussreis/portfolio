@@ -28,7 +28,7 @@ export default function ProjectSection() {
     <motion.section
       id="projects"
       ref={refs.projects}
-      className="bg-primary p-6 min-h-[50vh] text-primary-foreground select-none lg:p-8"
+      className="bg-primary p-6 min-h-[50vh] text-primary-foreground dark:text-secondary-foreground select-none lg:p-8"
     >
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t(`${baseKey}.title`)}
@@ -67,7 +67,7 @@ function ProjectListItem({
     <Card className="flex flex-col gap-2 w-full">
       <CardHeader>
         <div className="flex flex-col gap-3 items-baseline">
-          <Badge className="rounded-xs" variant={type.style}>
+          <Badge className="rounded-xs font-medium" variant={type.style}>
             {type.name}
           </Badge>
           <CardTitle className="text-xl">{name}</CardTitle>
@@ -85,8 +85,8 @@ function ProjectListItem({
               </Badge>
             ))}
           </div>
-          <Button className={href ? '' : 'hover:bg-primary/50'} asChild>
-            {href ? (
+          {href && (
+            <Button asChild>
               <a
                 href={href}
                 target="_blank"
@@ -96,12 +96,8 @@ function ProjectListItem({
                 {t(`${baseKey}.buttons.view-project`)}
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
-            ) : (
-              <span className="inline-flex items-center bg-primary/50 hover:bg-primary/50">
-                {t(`${baseKey}.buttons.view-project`)}
-              </span>
-            )}
-          </Button>
+            </Button>
+          )}
         </div>
       </CardFooter>
     </Card>
