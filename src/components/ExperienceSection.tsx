@@ -31,7 +31,7 @@ export default function ExperienceSection() {
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t('sections.experience.title')}
       </h1>
-      <div className="my-4 flex flex-col gap-4 bg-primary-foreground">
+      <div className="my-4 flex flex-col gap-4">
         {educationItems.map((item) => (
           <Card className="w-full" key={item.company}>
             <CardHeader>
