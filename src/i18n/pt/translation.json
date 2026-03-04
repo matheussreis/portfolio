@@ -74,6 +74,27 @@
       "sr-title": "Secção de Experiência",
       "data": [
         {
+          "company": "Educate.ie",
+          "location": "Dublin, Condado de Dublin, Irlanda",
+          "roles": [
+            {
+              "name": "Engenheiro de Software",
+              "description": "Com base na minha experiência anterior com aplicações baseadas em Symfony e na stack LAMP (Linux, Apache, MySQL, PHP), continuei a trabalhar em desenvolvimento de software, com foco na criação de projetos greenfield utilizando Laravel e Flutter. Participei em projetos desenvolvidos de raiz, incluindo plataformas CMS e aplicações relacionadas com educação, todos alojados na AWS Lightsail e integrados com S3 e SES.",
+              "startDate": "2025-09-29",
+              "endDate": "",
+              "contract": "Tempo Inteiro",
+              "skills": [
+                "Laravel",
+                "Flutter",
+                "Vue.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "AWS"
+              ]
+            }
+          ]
+        },
+        {
           "company": "Provident CRM",
           "location": "Dublin, Condado de Dublin, Irlanda",
           "roles": [
@@ -81,8 +102,8 @@
               "name": "Analista de Software",
               "description": "Através da minha experiência com o SugarCRM e o desenvolvimento em React.js e Node.js, presto agora apoio ao cliente, comunicando com os clientes, investigando problemas, aplicando implementações e ajudando a equipa de suporte.",
               "startDate": "2025-02-01",
-              "endDate": "",
-              "contract": "Full-Time",
+              "endDate": "2025-09-29",
+              "contract": "Tempo-Integral",
               "skills": [
                 "Bash Scripting",
                 "Consultoría SugarCRM",
@@ -93,7 +114,7 @@
               "name": "Desenvolvedor Júnior",
               "description": "Trabalhei em vários projetos SugarCRM, adicionando novas funcionalidades, integrando com outros sistemas e seguindo as melhores práticas de programação e metodologia ágil. Projetei e desenvolvi portais para clientes com React.js e Node.js, e mantive outros portais criados em Symfony.",
               "startDate": "2021-07-01",
-              "endDate": "2025-01-01",
+              "endDate": "2025-02-01",
               "contract": "Tempo-Integral",
               "skills": [
                 "JavaScript",
@@ -145,7 +166,7 @@
         },
         "typescript": {
           "title": "TypeScript",
-          "type": ["self-taught"]
+          "type": ["professional", "self-taught"]
         },
         "jquery": {
           "title": "JQuery",
@@ -158,6 +179,18 @@
         "symfony": {
           "title": "Symfony",
           "type": ["professional", "self-taught"]
+        },
+        "laravel": {
+          "title": "Laravel",
+          "type": ["professional"]
+        },
+        "flutter": {
+          "title": "Flutter",
+          "type": ["professional"]
+        },
+        "aws": {
+          "title": "AWS",
+          "type": ["professional"]
         },
         "mysql": {
           "title": "MySQL",
@@ -177,7 +210,7 @@
         },
         "tailwind": {
           "title": "Tailwind CSS",
-          "type": ["self-taught"]
+          "type": ["professional", "self-taught"]
         },
         "node": {
           "title": "Node.js",
@@ -230,7 +263,7 @@
         {
           "name": "Sistema Interno de Apoio à Habitação (HAP)",
           "description": "Este projeto apoia as autoridades locais irlandesas na assistência habitacional a famílias com necessidades de longo prazo, incluindo beneficiários de Subsídio de Renda. Facilita candidaturas e avaliações de elegibilidade através de uma plataforma eficiente e amigável.",
-          "type": { "name": "Profissional", "style": "default" },
+          "type": { "name": "Profissional", "style": "emerald" },
           "href": "",
           "technologies": [
             "JavaScript",
@@ -245,14 +278,14 @@
         {
           "name": "Portal de Candidaturas HAP",
           "description": "Este projeto permite que famílias com necessidades de longo prazo e proprietários gerenciem efetivamente as suas candidaturas habitacionais.",
-          "type": { "name": "Profissional", "style": "default" },
+          "type": { "name": "Profissional", "style": "emerald" },
           "href": "",
           "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
         {
           "name": "Site de Concessionária de Automóveis",
           "description": "Este projeto é um website simples para pequenas concessionárias de automóveis. O objetivo é oferecer um design limpo com funcionalidade mínima, permitindo que qualquer pessoa à procura de um carro veja as fotos e entre em contato com o concessionário caso tenha interesse.",
-          "type": { "name": "Pessoal", "style": "outline" },
+          "type": { "name": "Pessoal", "style": "purple" },
           "href": "https://github.com/matheussreis/car-dealer-site",
           "technologies": [
             "React.js",
@@ -265,7 +298,7 @@
         {
           "name": "Jogo do Galo",
           "description": "Este projeto é uma implementação simples do popular jogo Jogo do Galo. A ideia deste projeto foi aplicar o Redux num projeto React utilizando TypeScript. Nesta implementação, há apenas o modo jogador contra jogador, onde dois utilizadores podem jogar no mesmo computador.",
-          "type": { "name": "Pessoal", "style": "outline" },
+          "type": { "name": "Pessoal", "style": "purple" },
           "href": "https://github.com/matheussreis/tic-tac-toe-ts",
           "technologies": [
             "React.js",
