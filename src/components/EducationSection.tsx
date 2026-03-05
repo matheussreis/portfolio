@@ -27,7 +27,7 @@ export default function EducationSection() {
     <motion.section
       id="education"
       ref={refs.education}
-      className="bg-secondary p-6 min-h-[50vh] select-none lg:p-8"
+      className="bg-secondary p-6 min-h-[50vh] md:min-h-0 lg:min-h-0 select-none lg:p-8"
     >
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-foreground">
         {t(`${baseKey}.title`)}

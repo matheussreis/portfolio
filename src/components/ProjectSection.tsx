@@ -8,8 +8,8 @@ import {
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
 import { I18nProjectItem } from '@/types';
-import { useScrollContext } from '@/context';
 import { ExternalLink } from 'lucide-react';
+import { useScrollContext } from '@/context';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
@@ -61,15 +61,22 @@ function ProjectListItem({
   technologies,
   href,
 }: I18nProjectItem) {
-  const { t } = useTranslation();
-
   return (
     <Card className="flex flex-col gap-2 w-full">
       <CardHeader>
-        <div className="flex flex-col gap-3 items-baseline">
-          <Badge className="rounded-xs font-medium" variant={type.style}>
-            {type.name}
-          </Badge>
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-row justify-between w-full">
+            <Badge className="rounded-xs font-medium" variant={type.style}>
+              {type.name}
+            </Badge>
+            {href && (
+              <Button variant="outline" size="sm" className="h-6 px-2" asChild>
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </Button>
+            )}
+          </div>
           <CardTitle className="text-xl">{name}</CardTitle>
         </div>
       </CardHeader>
@@ -85,19 +92,6 @@ function ProjectListItem({
               </Badge>
             ))}
           </div>
-          {href && (
-            <Button asChild>
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center"
-              >
-                {t(`${baseKey}.buttons.view-project`)}
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          )}
         </div>
       </CardFooter>
     </Card>

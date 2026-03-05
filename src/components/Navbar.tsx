@@ -7,21 +7,41 @@ import {
 } from '@/components/ui/Sheet';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/Button';
+import { motion } from 'framer-motion';
 import { MenuIcon } from 'lucide-react';
 import ThemeSwitch from './ThemeSwitch';
-import { RefId, useScrollContext } from '@/context';
-import LanguageSwitch from '@/components/LanguageSwitch';
 import { navbarItemKeys } from '@/constants';
 import { useTranslation } from 'react-i18next';
+import { useRef, useEffect, useState } from 'react';
+import { RefId, useScrollContext } from '@/context';
+import LanguageSwitch from '@/components/LanguageSwitch';
 
 export default function Navbar() {
   const { scrollToSection, currentSection } = useScrollContext();
   const { t } = useTranslation();
+  const navRef = useRef<HTMLDivElement>(null);
+  const [underlineX, setUnderlineX] = useState(0);
+  const [underlineWidth, setUnderlineWidth] = useState(0);
 
   const items = navbarItemKeys.map((item) => ({
     label: t(`layout.navbar.items.${item}`),
     key: `${item}`,
   }));
+
+  useEffect(() => {
+    if (!navRef.current) {
+      return;
+    }
+
+    const activeButton = navRef.current.querySelector(
+      `button[data-section="${currentSection}"]`,
+    ) as HTMLElement;
+
+    if (activeButton) {
+      setUnderlineX(activeButton.offsetLeft);
+      setUnderlineWidth(activeButton.offsetWidth);
+    }
+  }, [currentSection]);
 
   return (
     <header className="h-16 w-full sticky top-0 bg-background select-none">
@@ -36,22 +56,38 @@ export default function Navbar() {
             {t('system.settings.siteName')}
           </span>
         </Button>
-        <nav className="hidden items-center gap-4 md:flex">
+        <nav
+          ref={navRef}
+          className="hidden items-center gap-4 md:flex relative"
+        >
           {items.map((item) => (
-            <Button
+            <motion.button
               key={item.key}
-              type="button"
-              variant="none"
+              data-section={item.key}
               onClick={() => scrollToSection(item.key as RefId)}
               className={cn(
-                'p-1',
-                currentSection === item.key ? 'font-extrabold text-md' : '',
-                'transition-all duration-800'
+                'p-1 relative z-10',
+                'transition-all duration-300',
+                currentSection === item.key ? 'font-bold text-md' : '',
               )}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {item.label}
-            </Button>
+            </motion.button>
           ))}
+          <motion.div
+            className="absolute bottom-0 h-0.5 bg-foreground rounded-full"
+            animate={{
+              x: underlineX,
+              width: underlineWidth,
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 30,
+            }}
+          />
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSwitch />
@@ -74,20 +110,21 @@ export default function Navbar() {
               </SheetDescription>
               <nav className="grid gap-4 px-4 py-6">
                 {items.map((item) => (
-                  <Button
+                  <motion.button
                     key={item.key}
-                    variant="none"
+                    onClick={() => scrollToSection(item.key as RefId)}
                     className={cn(
-                      'justify-start p-0',
-                      'transition-all duration-800',
+                      'justify-start p-0 w-full text-left',
+                      'transition-all duration-300',
                       currentSection === item.key
                         ? 'font-extrabold text-md'
-                        : ''
+                        : '',
                     )}
-                    onClick={() => scrollToSection(item.key as RefId)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     {item.label}
-                  </Button>
+                  </motion.button>
                 ))}
               </nav>
             </SheetContent>
