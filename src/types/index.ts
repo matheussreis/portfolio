@@ -14,6 +14,7 @@ export type I18nProjectItem = {
   description: string;
   type: { name: string; style: 'default' | 'outline' };
   href?: string;
+  srHref?: string;
   technologies: string[];
 };
 

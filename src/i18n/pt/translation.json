@@ -265,6 +265,7 @@
           "description": "Este projeto apoia as autoridades locais irlandesas na assistência habitacional a famílias com necessidades de longo prazo, incluindo beneficiários de Subsídio de Renda. Facilita candidaturas e avaliações de elegibilidade através de uma plataforma eficiente e amigável.",
           "type": { "name": "Profissional", "style": "emerald" },
           "href": "",
+          "srHref": "",
           "technologies": [
             "JavaScript",
             "PHP",
@@ -280,6 +281,7 @@
           "description": "Este projeto permite que famílias com necessidades de longo prazo e proprietários gerenciem efetivamente as suas candidaturas habitacionais.",
           "type": { "name": "Profissional", "style": "emerald" },
           "href": "",
+          "srHref": "",
           "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
         {
@@ -287,6 +289,7 @@
           "description": "Este projeto é um website simples para pequenas concessionárias de automóveis. O objetivo é oferecer um design limpo com funcionalidade mínima, permitindo que qualquer pessoa à procura de um carro veja as fotos e entre em contato com o concessionário caso tenha interesse.",
           "type": { "name": "Pessoal", "style": "purple" },
           "href": "https://github.com/matheussreis/car-dealer-site",
+          "srHref": "Ver o projeto 'Site de Concessionária de Automóveis' no GitHub",
           "technologies": [
             "React.js",
             "Next.js",
@@ -300,6 +303,7 @@
           "description": "Este projeto é uma implementação simples do popular jogo Jogo do Galo. A ideia deste projeto foi aplicar o Redux num projeto React utilizando TypeScript. Nesta implementação, há apenas o modo jogador contra jogador, onde dois utilizadores podem jogar no mesmo computador.",
           "type": { "name": "Pessoal", "style": "purple" },
           "href": "https://github.com/matheussreis/tic-tac-toe-ts",
+          "srHref": "Ver o projeto 'Jogo do Galo' no GitHub",
           "technologies": [
             "React.js",
             "Vite",

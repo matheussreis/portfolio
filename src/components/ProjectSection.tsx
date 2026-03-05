@@ -44,6 +44,7 @@ export default function ProjectSection() {
                 description={project.description}
                 technologies={project.technologies}
                 href={project.href}
+                srHref={project.srHref}
               />
             );
           })}
@@ -60,6 +61,7 @@ function ProjectListItem({
   description,
   technologies,
   href,
+  srHref,
 }: I18nProjectItem) {
   return (
     <Card className="flex flex-col gap-2 w-full">
@@ -71,7 +73,12 @@ function ProjectListItem({
             </Badge>
             {href && (
               <Button variant="outline" size="sm" className="h-6 px-2" asChild>
-                <a href={href} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={srHref}
+                >
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </Button>
