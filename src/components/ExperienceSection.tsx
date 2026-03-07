@@ -92,7 +92,10 @@ function ExperienceItem({
               {description}
             </CardDescription>
           </div>
-          <Badge variant="secondary" className="text-xs md:text-sm">
+          <Badge
+            variant="secondary"
+            className="text-xs md:text-sm py-1 px-4 rounded-md"
+          >
             {experienceRange}
           </Badge>
         </div>

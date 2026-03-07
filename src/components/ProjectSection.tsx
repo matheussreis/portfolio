@@ -72,14 +72,14 @@ function ProjectListItem({
               {type.name}
             </Badge>
             {href && (
-              <Button variant="outline" size="sm" className="h-6 px-2" asChild>
+              <Button variant="outline" size="sm" className="h-5 px-2" asChild>
                 <a
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={srHref}
                 >
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink size={2} />
                 </a>
               </Button>
             )}

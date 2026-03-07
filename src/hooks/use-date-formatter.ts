@@ -33,12 +33,12 @@ export function useDateFormatter() {
   });
 
   const format = (start: Date, end?: Date | null | undefined) => {
-    return `(${formatDateByRange.call(null, {
+    return `${formatDateByRange.call(null, {
       formatter: dateFormatter,
       currentDateText: t('system.settings.date.currentDateText'),
       start: start,
       end,
-    })})`;
+    })}`;
   };
 
   return { format };

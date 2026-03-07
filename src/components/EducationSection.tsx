@@ -78,8 +78,11 @@ function EducationItem({
         </div>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-          <Badge variant="secondary" className="text-xs md:text-sm">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-1">
+          <Badge
+            variant="secondary"
+            className="text-xs md:text-sm py-1 px-4 rounded-md"
+          >
             {educationRange}
           </Badge>
         </div>
