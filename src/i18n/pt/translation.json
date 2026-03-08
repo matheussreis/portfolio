@@ -261,6 +261,22 @@
       "sr-title": "Secção de Projetos",
       "data": [
         {
+          "name": "Primary Wellbeing",
+          "description": "Este projeto fornece aos professores uma plataforma para aceder a vários recursos dos seus livros Primary Wellbeing comprados. Também fornece aos editores e administradores do sistema ferramentas para gerir e controlar o conteúdo visível para os professores, bem como decidir se os professores que se registam devem ter acesso ao website.",
+          "type": { "name": "Profissional", "style": "emerald" },
+          "href": "",
+          "srHref": "",
+          "technologies": [
+            "PHP",
+            "Laravel",
+            "Filament",
+            "TypeScript",
+            "Vue.js",
+            "MySQL",
+            "AWS"
+          ]
+        },
+        {
           "name": "Sistema Interno de Apoio à Habitação (HAP)",
           "description": "Este projeto apoia as autoridades locais irlandesas na assistência habitacional a famílias com necessidades de longo prazo, incluindo beneficiários de Subsídio de Renda. Facilita candidaturas e avaliações de elegibilidade através de uma plataforma eficiente e amigável.",
           "type": { "name": "Profissional", "style": "emerald" },
@@ -285,6 +301,21 @@
           "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
         {
+          "name": "Portefólio (Este Website)",
+          "description": "Este projeto é o meu website de portefólio pessoal. Apresenta a minha formação, competências, experiência profissional e projetos, tanto profissionais como pessoais. O objetivo do website é dar uma visão clara do meu percurso e das tecnologias que utilizei ao longo do tempo.",
+          "type": { "name": "Pessoal", "style": "purple" },
+          "href": "https://github.com/matheussreis/portfolio",
+          "srHref": "Ver o projeto 'Portefólio' no GitHub",
+          "technologies": [
+            "React.js",
+            "Vite",
+            "TypeScript",
+            "Tailwind CSS",
+            "shadcn",
+            "i18next"
+          ]
+        },
+        {
           "name": "Site de Concessionária de Automóveis",
           "description": "Este projeto é um website simples para pequenas concessionárias de automóveis. O objetivo é oferecer um design limpo com funcionalidade mínima, permitindo que qualquer pessoa à procura de um carro veja as fotos e entre em contato com o concessionário caso tenha interesse.",
           "type": { "name": "Pessoal", "style": "purple" },
@@ -295,6 +326,7 @@
             "Next.js",
             "Tailwind CSS",
             "TypeScript",
+            "shadcn",
             "next-intl"
           ]
         },

@@ -261,6 +261,22 @@
       "sr-title": "Projects Section",
       "data": [
         {
+          "name": "Primary Wellbeing",
+          "description": "This project provides teachers with a platform to access a variety of resources for their purchased Primary Wellbeing books. It also provides editors and system administrators with tools to manage and control the content visible to teachers, as well as decide whether teachers who register should have access to the website.",
+          "type": { "name": "Professional", "style": "emerald" },
+          "href": "",
+          "srHref": "",
+          "technologies": [
+            "PHP",
+            "Laravel",
+            "Filament",
+            "TypeScript",
+            "Vue.js",
+            "MySQL",
+            "AWS"
+          ]
+        },
+        {
           "name": "HAP (Housing Assistance Payment) Internal System",
           "description": "This project supports Irish local authorities in providing housing assistance to households with long-term needs, including Rent Supplement recipients. It streamlines applications and eligibility assessments via an efficient, user-friendly platform.",
           "type": { "name": "Professional", "style": "emerald" },
@@ -285,6 +301,21 @@
           "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
         {
+          "name": "Portfolio (This Website)",
+          "description": "This project is my personal portfolio website. It presents my education, skills, work experience, and both professional and personal projects. The goal of the website is to provide a clear overview of my background and the technologies I have worked with.",
+          "type": { "name": "Personal", "style": "purple" },
+          "href": "https://github.com/matheussreis/portfolio",
+          "srHref": "View the 'Portfolio' project on GitHub",
+          "technologies": [
+            "React.js",
+            "Vite",
+            "TypeScript",
+            "Tailwind CSS",
+            "shadcn",
+            "i18next"
+          ]
+        },
+        {
           "name": "Car Dealer Site",
           "description": "This project is a simple website for small car dealerships. The goal is to offer a clean design with minimal functionality, allowing anyone looking for a car to view pictures and contact the dealer if they're interested.",
           "type": { "name": "Personal", "style": "purple" },
@@ -295,6 +326,7 @@
             "Next.js",
             "Tailwind CSS",
             "TypeScript",
+            "shadcn",
             "next-intl"
           ]
         },
