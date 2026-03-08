@@ -8,11 +8,10 @@ import {
 } from '@/components/ui/Card';
 import { motion } from 'framer-motion';
 import { I18nProjectItem } from '@/types';
-import { ExternalLink } from 'lucide-react';
 import { useScrollContext } from '@/context';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/Button';
+import { DiGithubBadge } from 'react-icons/di';
 
 const baseKey = 'sections.projects';
 
@@ -34,7 +33,7 @@ export default function ProjectSection() {
         {t(`${baseKey}.title`)}
       </h1>
       <div className="my-4">
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projectItems.map((project) => {
             return (
               <ProjectListItem
@@ -72,16 +71,15 @@ function ProjectListItem({
               {type.name}
             </Badge>
             {href && (
-              <Button variant="outline" size="sm" className="h-5 px-2" asChild>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={srHref}
-                >
-                  <ExternalLink size={2} />
-                </a>
-              </Button>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={srHref}
+                className="h-5"
+              >
+                <DiGithubBadge className="w-6 h-6" />
+              </a>
             )}
           </div>
           <CardTitle className="text-xl">{name}</CardTitle>
