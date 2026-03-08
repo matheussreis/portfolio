@@ -1,7 +1,9 @@
 import {
+  DiAws,
   DiGit,
   DiJavascript,
   DiJqueryLogo,
+  DiLaravel,
   DiLinux,
   DiMsqlServer,
   DiMysql,
@@ -20,10 +22,10 @@ import { motion } from 'framer-motion';
 import { skillKeys } from '@/constants';
 import SugarCrm from '@/icons/SugarCrm';
 import { CgMonday } from 'react-icons/cg';
-import { SiTalend } from 'react-icons/si';
 import { useScrollContext } from '@/context';
 import { useTranslation } from 'react-i18next';
 import { BiLogoTypescript } from 'react-icons/bi';
+import { SiFlutter, SiTalend } from 'react-icons/si';
 import { VariantProps } from 'class-variance-authority';
 import { Card, CardContent } from '@/components/ui/Card';
 import { IoLogoCss3, IoLogoHtml5 } from 'react-icons/io';
@@ -40,7 +42,7 @@ const skillIconClass = 'fill-secondary-foreground';
 const createIcon = (
   IconComponent: IconType,
   size?: string | number | undefined,
-  className?: string
+  className?: string,
 ) => <IconComponent size={size} className={className} />;
 
 const createSkillIcon = (IconComponent: IconType) => {
@@ -54,6 +56,9 @@ const iconSkillMapping = {
   jquery: createSkillIcon(DiJqueryLogo),
   php: createSkillIcon(DiPhp),
   symfony: createSkillIcon(DiSymfony),
+  laravel: createSkillIcon(DiLaravel),
+  flutter: createSkillIcon(SiFlutter),
+  aws: createSkillIcon(DiAws),
   mysql: createSkillIcon(DiMysql),
   mssql: createSkillIcon(DiMsqlServer),
   react: createSkillIcon(DiReact),
@@ -93,7 +98,7 @@ export default function SkillSection() {
   const skillTypeKeys = Object.keys(
     t(`${baseKey}.types`, {
       returnObjects: true,
-    })
+    }),
   ) as I18nSkillTypeKey[];
 
   const getSkillTypes = (skillKey: I18nSkillItemKey) => {
@@ -114,7 +119,7 @@ export default function SkillSection() {
       className="bg-primary p-6 min-h-[35vh] select-none lg:p-8"
     >
       <header className="flex flex-col md:flex-row lg:flex-row justify-between gap-2">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground dark:text-secondary-foreground">
           {t(`${baseKey}.title`)}
         </h1>
         <div className="flex flex-wrap items-center gap-3 text-sm text-primary-foreground/90">
@@ -125,7 +130,7 @@ export default function SkillSection() {
               <Badge
                 key={skillTypeKey}
                 variant={badgeSkillTypeVariantMapping[skillTypeKey]}
-                className="flex flex-row gap-1 items-stretch"
+                className="flex flex-row gap-1 items-stretch font-medium cursor-default rounded-xs"
               >
                 <Icon size={15} />
                 {t(`${baseKey}.types.${skillTypeKey}`)}
@@ -134,7 +139,7 @@ export default function SkillSection() {
           })}
         </div>
       </header>
-      <div className="my-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="my-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
         {skillKeys.map((skillKey) => {
           return (
             <SkillSectionItem
@@ -159,8 +164,8 @@ interface SkillSectionItemProps {
 
 function SkillSectionItem({ title, skillKey, types }: SkillSectionItemProps) {
   return (
-    <Card className="overflow-hidden p-2 h-50">
-      <CardContent className="p-2 h-full">
+    <Card className="overflow-hidden h-50">
+      <CardContent className="h-full p-4">
         <div className="flex flex-col gap-2 h-full">
           <div className="flex flex-col items-center justify-center text-center h-full gap-4">
             {iconSkillMapping[skillKey]}
@@ -172,10 +177,15 @@ function SkillSectionItem({ title, skillKey, types }: SkillSectionItemProps) {
               return (
                 <TooltipProvider key={type.key}>
                   <Tooltip>
-                    <TooltipTrigger>
-                      <Badge variant={badgeSkillTypeVariantMapping[type.key]}>
-                        <Icon size={10} />
-                      </Badge>
+                    <TooltipTrigger asChild>
+                      <span className="inline-block">
+                        <Badge
+                          className="rounded-xs"
+                          variant={badgeSkillTypeVariantMapping[type.key]}
+                        >
+                          <Icon size={12} />
+                        </Badge>
+                      </span>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{type.value}</p>

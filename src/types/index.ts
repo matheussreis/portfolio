@@ -12,8 +12,9 @@ export type I18nEducationItem = {
 export type I18nProjectItem = {
   name: string;
   description: string;
-  type: { name: string; style: 'default' | 'outline' };
+  type: { name: string; style: 'emerald' | 'purple' };
   href?: string;
+  srHref?: string;
   technologies: string[];
 };
 

@@ -9,10 +9,9 @@ import {
 import { motion } from 'framer-motion';
 import { I18nProjectItem } from '@/types';
 import { useScrollContext } from '@/context';
-import { ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/Button';
+import { DiGithubBadge } from 'react-icons/di';
 
 const baseKey = 'sections.projects';
 
@@ -28,13 +27,13 @@ export default function ProjectSection() {
     <motion.section
       id="projects"
       ref={refs.projects}
-      className="bg-primary p-6 min-h-[50vh] text-primary-foreground select-none lg:p-8"
+      className="bg-primary p-6 min-h-[50vh] text-primary-foreground dark:text-secondary-foreground select-none lg:p-8"
     >
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t(`${baseKey}.title`)}
       </h1>
       <div className="my-4">
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projectItems.map((project) => {
             return (
               <ProjectListItem
@@ -44,6 +43,7 @@ export default function ProjectSection() {
                 description={project.description}
                 technologies={project.technologies}
                 href={project.href}
+                srHref={project.srHref}
               />
             );
           })}
@@ -60,16 +60,28 @@ function ProjectListItem({
   description,
   technologies,
   href,
+  srHref,
 }: I18nProjectItem) {
-  const { t } = useTranslation();
-
   return (
     <Card className="flex flex-col gap-2 w-full">
       <CardHeader>
-        <div className="flex flex-col gap-3 items-baseline">
-          <Badge className="rounded-xs" variant={type.style}>
-            {type.name}
-          </Badge>
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-row justify-between w-full">
+            <Badge className="rounded-xs font-medium" variant={type.style}>
+              {type.name}
+            </Badge>
+            {href && (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={srHref}
+                className="h-5"
+              >
+                <DiGithubBadge className="w-6 h-6" />
+              </a>
+            )}
+          </div>
           <CardTitle className="text-xl">{name}</CardTitle>
         </div>
       </CardHeader>
@@ -85,23 +97,6 @@ function ProjectListItem({
               </Badge>
             ))}
           </div>
-          <Button className={href ? '' : 'hover:bg-primary/50'} asChild>
-            {href ? (
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center"
-              >
-                {t(`${baseKey}.buttons.view-project`)}
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            ) : (
-              <span className="inline-flex items-center bg-primary/50 hover:bg-primary/50">
-                {t(`${baseKey}.buttons.view-project`)}
-              </span>
-            )}
-          </Button>
         </div>
       </CardFooter>
     </Card>

@@ -4,7 +4,6 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -12,16 +11,13 @@ import { useScroll } from 'framer-motion';
 
 export type RefId = 'home' | 'experience' | 'education' | 'projects' | 'skills';
 
-
 export type ScrollContextType = {
   scrollToSection: (elementId: RefId) => void;
   refs: Record<RefId, RefObject<HTMLElement>>;
   currentSection: RefId;
 };
 
-
 const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
-
 
 interface ScrollProviderProps {
   children: React.ReactNode;
@@ -29,64 +25,78 @@ interface ScrollProviderProps {
 
 export function ScrollProvider({ children }: ScrollProviderProps) {
   const [currentSection, setCurrentSection] = useState<RefId>('home');
+  const isManualScroll = useRef(false);
 
   const projectsRef = useRef<HTMLElement>(null);
   const homeRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
   const educationRef = useRef<HTMLElement>(null);
-  const skillRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
 
   const { scrollY } = useScroll();
 
-  const refMapping = useMemo(
-    () => ({
-      projects: projectsRef,
-      home: homeRef,
-      experience: experienceRef,
-      education: educationRef,
-      skills: skillRef,
-    }),
-    []
-  );
+  const refMapping = {
+    projects: projectsRef,
+    home: homeRef,
+    experience: experienceRef,
+    education: educationRef,
+    skills: skillsRef,
+  };
 
   const scrollToSection = useCallback(
     (elementId: RefId) => {
       const ref = refMapping[elementId];
+      isManualScroll.current = true;
+      setCurrentSection(elementId);
+
       if (elementId === 'home') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (ref?.current) {
         ref.current.scrollIntoView({ behavior: 'smooth' });
       }
-      setCurrentSection(elementId);
+
+      setTimeout(() => {
+        isManualScroll.current = false;
+      }, 1000);
     },
-    [refMapping]
+    [refMapping],
   );
 
   useEffect(() => {
-    scrollY.on('change', () => {
+    const unsubscribe = scrollY.on('change', () => {
+      if (isManualScroll.current) {
+        return;
+      }
+
+      const navbar = document.querySelector('nav');
+      const navbarHeight = navbar?.clientHeight || 0;
+      const viewportCenter = navbarHeight + window.innerHeight / 2;
+
       let nearestSection: RefId | null = null;
       let minDistance = Number.MAX_VALUE;
 
-      for (const key in refMapping) {
-        const ref = refMapping[key as RefId];
-
+      for (const [key, ref] of Object.entries(refMapping)) {
         if (!ref.current) {
           continue;
         }
 
         const rect = ref.current.getBoundingClientRect();
-        const distance = Math.abs(rect.top);
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
         if (distance < minDistance) {
           minDistance = distance;
           nearestSection = key as RefId;
         }
       }
 
-      if (nearestSection && nearestSection !== currentSection) {
+      if (nearestSection) {
         setCurrentSection(nearestSection);
       }
     });
-  }, [scrollY, refMapping, currentSection]);
+
+    return () => unsubscribe();
+  }, [scrollY, refMapping]);
 
   return (
     <ScrollContext.Provider
@@ -100,7 +110,6 @@ export function ScrollProvider({ children }: ScrollProviderProps) {
     </ScrollContext.Provider>
   );
 }
-
 
 export const useScrollContext = () => {
   const context = useContext(ScrollContext);
