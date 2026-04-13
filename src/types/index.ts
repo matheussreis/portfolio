@@ -9,12 +9,16 @@ export type I18nEducationItem = {
   organisation: string;
 };
 
+export type ProjectLinkItem = {
+  url: string;
+  srHref: string;
+};
+
 export type I18nProjectItem = {
   name: string;
   description: string;
   type: { name: string; style: 'emerald' | 'purple' };
-  href?: string;
-  srHref?: string;
+  links?: Partial<Record<'github' | 'app', ProjectLinkItem>> | null;
   technologies: string[];
 };
 

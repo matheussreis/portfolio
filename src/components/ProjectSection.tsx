@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
+import { Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { I18nProjectItem } from '@/types';
 import { useScrollContext } from '@/context';
@@ -42,8 +43,7 @@ export default function ProjectSection() {
                 type={project.type}
                 description={project.description}
                 technologies={project.technologies}
-                href={project.href}
-                srHref={project.srHref}
+                links={project.links}
               />
             );
           })}
@@ -59,8 +59,7 @@ function ProjectListItem({
   type,
   description,
   technologies,
-  href,
-  srHref,
+  links,
 }: I18nProjectItem) {
   return (
     <Card className="flex flex-col gap-2 w-full">
@@ -70,17 +69,30 @@ function ProjectListItem({
             <Badge className="rounded-xs font-medium" variant={type.style}>
               {type.name}
             </Badge>
-            {href && (
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={srHref}
-                className="h-5"
-              >
-                <DiGithubBadge className="w-6 h-6" />
-              </a>
-            )}
+            <div className="flex flex-row gap-2 items-center">
+              {links?.app && (
+                <a
+                  href={links.app.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={links.app.srHref}
+                  className="flex items-center"
+                >
+                  <Eye className="w-5 h-5" />
+                </a>
+              )}
+              {links?.github && (
+                <a
+                  href={links.github.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={links.github.srHref}
+                  className="flex items-center"
+                >
+                  <DiGithubBadge className="w-6 h-6" />
+                </a>
+              )}
+            </div>
           </div>
           <CardTitle className="text-xl">{name}</CardTitle>
         </div>
