@@ -12,18 +12,14 @@ export default defineConfig({
   },
   base: '/portfolio/',
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks(id) {
-          if (
-            id.includes('src/icons/') ||
-            id.includes('react-icons') ||
-            id.includes('lucide-react')
-          )
-            return 'icons';
-          if (id.includes('i18next') || id.includes('src/i18n/')) return 'lang';
-          if (id.includes('src/components/')) return 'components';
-          if (id.includes('node_modules')) return 'vendor';
+        codeSplitting: {
+          groups: [
+            { name: 'icons', test: /react-icons|lucide-react|src\/icons\// },
+            { name: 'lang', test: /i18next|src\/i18n\// },
+            { name: 'vendor', test: /node_modules/ },
+          ],
         },
       },
     },
