@@ -52,9 +52,6 @@ const config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
-      fontFamily: {
-        josef: ['JosefinSans', 'sans-serif'],
-      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
