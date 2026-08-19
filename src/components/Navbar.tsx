@@ -117,7 +117,7 @@ export default function Navbar() {
                       'justify-start p-0 w-full text-left',
                       'transition-all duration-300',
                       currentSection === item.key
-                        ? 'font-extrabold text-md'
+                        ? 'font-bold text-md'
                         : '',
                     )}
                     whileHover={{ scale: 1.02 }}
