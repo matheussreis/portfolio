@@ -40,4 +40,11 @@ i18n
     },
   });
 
+const syncHtmlLang = (language: string) => {
+  document.documentElement.lang = language;
+};
+
+syncHtmlLang(i18n.language);
+i18n.on('languageChanged', syncHtmlLang);
+
 export { i18n, defaultNS, type Locale, locales };
