@@ -82,7 +82,7 @@
               "description": "Com base na minha experiência anterior com aplicações baseadas em Symfony e na stack LAMP (Linux, Apache, MySQL, PHP), continuei a trabalhar em desenvolvimento de software, com foco na criação de projetos greenfield utilizando Laravel e Flutter. Participei em projetos desenvolvidos de raiz, incluindo plataformas CMS e aplicações relacionadas com educação, todos alojados na AWS Lightsail e integrados com S3 e SES.",
               "startDate": "2025-09-29",
               "endDate": "",
-              "contract": "Tempo Inteiro",
+              "contract": "Tempo-Integral",
               "skills": [
                 "Laravel",
                 "Flutter",
@@ -304,7 +304,7 @@
           "links": {
             "github": {
               "url": "https://github.com/matheussreis/portfolio",
-              "srHref": "View the 'Portfolio' project on GitHub"
+              "srHref": "Ver o projeto 'Portfolio' no GitHub"
             }
           },
           "technologies": [
@@ -319,7 +319,7 @@
         {
           "name": "Astro Dash",
           "description": "Este projeto é um website simples que mostra o que acontece no espaço em cada dia. O objetivo é apresentar dados de forma clara e fácil, permitindo aos utilizadores ver eventos e imagens da API da NASA.",
-          "type": { "name": "Personal", "style": "purple" },
+          "type": { "name": "Pessoal", "style": "purple" },
           "links": {
             "github": {
               "url": "https://github.com/matheussreis/astro-dash",
