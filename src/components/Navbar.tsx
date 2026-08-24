@@ -22,6 +22,12 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
   const [underlineX, setUnderlineX] = useState(0);
   const [underlineWidth, setUnderlineWidth] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleMobileNavClick = (key: RefId) => {
+    scrollToSection(key);
+    setIsMobileMenuOpen(false);
+  };
 
   const items = navbarItemKeys.map((item) => ({
     label: t(`layout.navbar.items.${item}`),
@@ -92,7 +98,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <LanguageSwitch />
           <ThemeSwitch />
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <MenuIcon className="h-5 w-5" />
@@ -112,7 +118,7 @@ export default function Navbar() {
                 {items.map((item) => (
                   <motion.button
                     key={item.key}
-                    onClick={() => scrollToSection(item.key as RefId)}
+                    onClick={() => handleMobileNavClick(item.key as RefId)}
                     className={cn(
                       'justify-start p-0 w-full text-left',
                       'transition-all duration-300',

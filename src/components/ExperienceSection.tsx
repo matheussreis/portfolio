@@ -18,7 +18,7 @@ export default function ExperienceSection() {
   const { t } = useTranslation('translation');
   const { refs } = useScrollContext();
 
-  const educationItems = t(`${baseKey}.data`, {
+  const experienceItems = t(`${baseKey}.data`, {
     returnObjects: true,
   }) as I18nExperienceItem[];
 
@@ -32,7 +32,7 @@ export default function ExperienceSection() {
         {t('sections.experience.title')}
       </h1>
       <div className="my-4 flex flex-col gap-4">
-        {educationItems.map((item) => (
+        {experienceItems.map((item) => (
           <Card className="w-full" key={item.company}>
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl m-0">
@@ -49,7 +49,7 @@ export default function ExperienceSection() {
                   description={role.description}
                   role={role.name}
                   skills={role.skills}
-                  startDate={new Date(role.startDate ?? undefined)}
+                  startDate={new Date(role.startDate)}
                   endDate={role.endDate ? new Date(role.endDate) : null}
                 />
               ))}

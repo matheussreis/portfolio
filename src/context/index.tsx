@@ -4,6 +4,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -35,13 +36,16 @@ export function ScrollProvider({ children }: ScrollProviderProps) {
 
   const { scrollY } = useScroll();
 
-  const refMapping = {
-    projects: projectsRef,
-    home: homeRef,
-    experience: experienceRef,
-    education: educationRef,
-    skills: skillsRef,
-  };
+  const refMapping = useMemo(
+    () => ({
+      projects: projectsRef,
+      home: homeRef,
+      experience: experienceRef,
+      education: educationRef,
+      skills: skillsRef,
+    }),
+    [],
+  );
 
   const scrollToSection = useCallback(
     (elementId: RefId) => {

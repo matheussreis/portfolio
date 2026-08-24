@@ -39,7 +39,7 @@ export default function EducationSection() {
               key={`${item.name}-${index}`}
               name={item.name}
               organisation={item.organisation}
-              startDate={new Date(item.startDate ?? undefined)}
+              startDate={new Date(item.startDate)}
               endDate={item.endDate ? new Date(item.endDate) : null}
             />
           );
