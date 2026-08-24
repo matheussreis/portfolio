@@ -294,7 +294,12 @@
           "name": "HAP (Housing Assistance Payment) Applications Portal",
           "description": "This project enables households with long-term needs and landlords to manage their housing applications effectively.",
           "type": { "name": "Professional", "style": "emerald" },
-          "links": null,
+          "links": {
+            "app": {
+              "url": "https://happortal.limerick.ie/",
+              "srHref": "Open the 'HAP Online Portal' project where it's hosted"
+            }
+          },
           "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
         {

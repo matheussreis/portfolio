@@ -294,7 +294,12 @@
           "name": "Portal de Candidaturas HAP",
           "description": "Este projeto permite que famílias com necessidades de longo prazo e proprietários gerenciem efetivamente as suas candidaturas habitacionais.",
           "type": { "name": "Profissional", "style": "emerald" },
-          "links": null,
+          "links": {
+            "app": {
+              "url": "https://happortal.limerick.ie/",
+              "srHref": "Abrir o projeto 'HAP Online Portal' onde está hospedado"
+            }
+          },
           "technologies": ["JavaScript", "Node.js", "React.js", "Redis"]
         },
         {
