@@ -74,6 +74,25 @@
       "sr-title": "Secção de Experiência",
       "data": [
         {
+          "company": "McLernons",
+          "location": "Dublin, Condado de Dublin, Irlanda",
+          "roles": [
+            {
+              "name": "Engenheiro de Software",
+              "description": "Com base na minha experiência anterior a construir aplicações full-stack e aplicações frontend responsivas, avancei para a criação de projetos de raiz (greenfield) em React e TypeScript, ajudando também a equipa a manter e melhorar aplicações em React Native, a gerir lançamentos através da Apple App Store e da Google Play Console, a fazer deploy de aplicações web no Azure, e a integrar estes sistemas com outros no ecossistema. Ao longo do processo, também participo em code review, ajudo a desenhar ecrãs e fluxos de algumas das aplicações, e desenho e integro as APIs que ligam estas aplicações entre si.",
+              "startDate": "2026-07-01",
+              "endDate": "",
+              "contract": "Tempo Inteiro",
+              "skills": [
+                "React.js",
+                "React Native",
+                "TypeScript",
+                "Tailwind CSS"
+              ]
+            }
+          ]
+        },
+        {
           "company": "Educate.ie",
           "location": "Dublin, Condado de Dublin, Irlanda",
           "roles": [
@@ -81,8 +100,8 @@
               "name": "Engenheiro de Software",
               "description": "Com base na minha experiência anterior com aplicações baseadas em Symfony e na stack LAMP (Linux, Apache, MySQL, PHP), continuei a trabalhar em desenvolvimento de software, com foco na criação de projetos greenfield utilizando Laravel e Flutter. Participei em projetos desenvolvidos de raiz, incluindo plataformas CMS e aplicações relacionadas com educação, todos alojados na AWS Lightsail e integrados com S3 e SES.",
               "startDate": "2025-09-29",
-              "endDate": "",
-              "contract": "Tempo-Integral",
+              "endDate": "2026-03-23",
+              "contract": "Tempo Inteiro",
               "skills": [
                 "Laravel",
                 "Flutter",

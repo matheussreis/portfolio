@@ -74,6 +74,25 @@
       "sr-title": "Experience Section",
       "data": [
         {
+          "company": "McLernons",
+          "location": "Dublin, County Dublin, Ireland",
+          "roles": [
+            {
+              "name": "Software Engineer",
+              "description": "Built on top of my previous experience building full-stack applications and responsive frontend apps, I moved on to creating greenfield projects in React and TypeScript, while helping the team maintain and improve React Native apps, manage releases through the Apple App Store and Google Play Console, deploy web apps on Azure, and integrate these systems with others in the ecosystem. Along the way, I also take part in code review, help design screens and flows for some of the apps, and design and integrate the APIs connecting these apps together.",
+              "startDate": "2026-07-01",
+              "endDate": "",
+              "contract": "Full-Time",
+              "skills": [
+                "React.js",
+                "React Native",
+                "TypeScript",
+                "Tailwind CSS"
+              ]
+            }
+          ]
+        },
+        {
           "company": "Educate.ie",
           "location": "Dublin, County Dublin, Ireland",
           "roles": [
@@ -81,7 +100,7 @@
               "name": "Software Engineer",
               "description": "Built on my previous experience with Symfony based applications and the LAMP stack (Linux, Apache, MySQL, PHP), I continued working in software development, focusing on building greenfield projects using Laravel and Flutter. I took part in projects developed from the ground up, including CMS platforms and learning related applications, all hosted on AWS Lightsail and integrated with S3 and SES.",
               "startDate": "2025-09-29",
-              "endDate": "",
+              "endDate": "2026-03-23",
               "contract": "Full-Time",
               "skills": [
                 "Laravel",
