@@ -7,7 +7,6 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { Eye } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { I18nProjectItem } from '@/types';
 import { useScrollContext } from '@/context';
 import { Badge } from '@/components/ui/Badge';
@@ -25,7 +24,7 @@ export default function ProjectSection() {
   }) as I18nProjectItem[];
 
   return (
-    <motion.section
+    <section
       id="projects"
       ref={refs.projects}
       className="bg-primary p-6 min-h-[50vh] text-primary-foreground dark:text-secondary-foreground select-none lg:p-8"
@@ -50,7 +49,7 @@ export default function ProjectSection() {
         </div>
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </motion.section>
+    </section>
   );
 }
 

@@ -18,7 +18,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/Tooltip';
-import { motion } from 'framer-motion';
 import { skillKeys } from '@/constants';
 import SugarCrm from '@/icons/SugarCrm';
 import { CgMonday } from 'react-icons/cg';
@@ -113,7 +112,7 @@ export default function SkillSection() {
   };
 
   return (
-    <motion.section
+    <section
       id="skills"
       ref={refs.skills}
       className="bg-primary p-6 min-h-[35vh] select-none lg:p-8"
@@ -152,7 +151,7 @@ export default function SkillSection() {
         })}
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </motion.section>
+    </section>
   );
 }
 

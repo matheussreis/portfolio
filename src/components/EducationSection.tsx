@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
-import { motion } from 'framer-motion';
 import { useScrollContext } from '@/context';
 import { I18nEducationItem } from '@/types';
 import { GraduationCap } from 'lucide-react';
@@ -24,7 +23,7 @@ export default function EducationSection() {
   }) as I18nEducationItem[];
 
   return (
-    <motion.section
+    <section
       id="education"
       ref={refs.education}
       className="bg-secondary p-6 min-h-[50vh] md:min-h-0 lg:min-h-0 select-none lg:p-8"
@@ -46,7 +45,7 @@ export default function EducationSection() {
         })}
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </motion.section>
+    </section>
   );
 }
 

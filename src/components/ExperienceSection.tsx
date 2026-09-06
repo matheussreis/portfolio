@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
-import { motion } from 'framer-motion';
 import { useScrollContext } from '@/context';
 import { I18nExperienceItem } from '@/types';
 import { Badge } from '@/components/ui/Badge';
@@ -23,7 +22,7 @@ export default function ExperienceSection() {
   }) as I18nExperienceItem[];
 
   return (
-    <motion.section
+    <section
       id="experience"
       ref={refs.experience}
       className="bg-secondary p-6 min-h-[50vh] text-secondary-foreground select-none lg:p-8"
@@ -58,7 +57,7 @@ export default function ExperienceSection() {
         ))}
       </div>
       <span className="sr-only">{t(`${baseKey}.sr-title`)}</span>
-    </motion.section>
+    </section>
   );
 }
 

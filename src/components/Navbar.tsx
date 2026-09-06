@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/Sheet';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/Button';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { MenuIcon } from 'lucide-react';
 import ThemeSwitch from './ThemeSwitch';
 import { navbarItemKeys } from '@/constants';
@@ -50,93 +50,95 @@ export default function Navbar() {
   }, [currentSection]);
 
   return (
-    <header className="h-16 w-full sticky top-0 bg-background select-none">
-      <div className="flex h-16 items-center justify-between px-4 md:px-6">
-        <Button
-          type="button"
-          variant="none"
-          onClick={() => scrollToSection('home')}
-          className="flex items-center gap-2 p-0 m-0"
-        >
-          <span className="text-xl font-semibold">
-            {t('system.settings.siteName')}
-          </span>
-        </Button>
-        <nav
-          ref={navRef}
-          className="hidden items-center gap-4 md:flex relative"
-        >
-          {items.map((item) => (
-            <motion.button
-              key={item.key}
-              data-section={item.key}
-              onClick={() => scrollToSection(item.key as RefId)}
-              className={cn(
-                'p-1 relative z-10',
-                'transition-all duration-300',
-                currentSection === item.key ? 'font-bold text-md' : '',
-              )}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {item.label}
-            </motion.button>
-          ))}
-          <motion.div
-            className="absolute bottom-0 h-0.5 bg-foreground rounded-full"
-            animate={{
-              x: underlineX,
-              width: underlineWidth,
-            }}
-            transition={{
-              type: 'spring',
-              stiffness: 300,
-              damping: 30,
-            }}
-          />
-        </nav>
-        <div className="flex items-center gap-2">
-          <LanguageSwitch />
-          <ThemeSwitch />
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <MenuIcon className="h-5 w-5" />
-                <span className="sr-only">
-                  {t('layout.navbar.sr-menu-title')}
-                </span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="md:hidden">
-              <SheetTitle className="hidden">
-                {t('layout.navbar.mobile.title')}
-              </SheetTitle>
-              <SheetDescription className="hidden">
-                {t('layout.navbar.mobile.description')}
-              </SheetDescription>
-              <nav className="grid gap-4 px-4 py-6">
-                {items.map((item) => (
-                  <motion.button
-                    key={item.key}
-                    onClick={() => handleMobileNavClick(item.key as RefId)}
-                    className={cn(
-                      'justify-start p-0 w-full text-left',
-                      'transition-all duration-300',
-                      currentSection === item.key
-                        ? 'font-bold text-md'
-                        : '',
-                    )}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {item.label}
-                  </motion.button>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+    <LazyMotion features={domAnimation} strict>
+      <header className="h-16 w-full sticky top-0 bg-background select-none">
+        <div className="flex h-16 items-center justify-between px-4 md:px-6">
+          <Button
+            type="button"
+            variant="none"
+            onClick={() => scrollToSection('home')}
+            className="flex items-center gap-2 p-0 m-0"
+          >
+            <span className="text-xl font-semibold">
+              {t('system.settings.siteName')}
+            </span>
+          </Button>
+          <nav
+            ref={navRef}
+            className="hidden items-center gap-4 md:flex relative"
+          >
+            {items.map((item) => (
+              <m.button
+                key={item.key}
+                data-section={item.key}
+                onClick={() => scrollToSection(item.key as RefId)}
+                className={cn(
+                  'p-1 relative z-10',
+                  'transition-all duration-300',
+                  currentSection === item.key ? 'font-bold text-md' : '',
+                )}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.label}
+              </m.button>
+            ))}
+            <m.div
+              className="absolute bottom-0 h-0.5 bg-foreground rounded-full"
+              animate={{
+                x: underlineX,
+                width: underlineWidth,
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 30,
+              }}
+            />
+          </nav>
+          <div className="flex items-center gap-2">
+            <LanguageSwitch />
+            <ThemeSwitch />
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <MenuIcon className="h-5 w-5" />
+                  <span className="sr-only">
+                    {t('layout.navbar.sr-menu-title')}
+                  </span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="md:hidden">
+                <SheetTitle className="hidden">
+                  {t('layout.navbar.mobile.title')}
+                </SheetTitle>
+                <SheetDescription className="hidden">
+                  {t('layout.navbar.mobile.description')}
+                </SheetDescription>
+                <nav className="grid gap-4 px-4 py-6">
+                  {items.map((item) => (
+                    <m.button
+                      key={item.key}
+                      onClick={() => handleMobileNavClick(item.key as RefId)}
+                      className={cn(
+                        'justify-start p-0 w-full text-left',
+                        'transition-all duration-300',
+                        currentSection === item.key
+                          ? 'font-bold text-md'
+                          : '',
+                      )}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {item.label}
+                    </m.button>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </LazyMotion>
   );
 }

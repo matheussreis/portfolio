@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useScrollContext } from '@/context';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
@@ -8,7 +7,7 @@ export default function HeroSection() {
   const { refs, scrollToSection } = useScrollContext();
 
   return (
-    <motion.section
+    <section
       id="home"
       ref={refs.home}
       className="text-primary-foreground bg-primary p-4 min-h-[50vh] md:min-h-[80vh] flex flex-col justify-center items-center gap-6"
@@ -30,6 +29,6 @@ export default function HeroSection() {
         {t('sections.hero.buttons.view-projects')}
       </Button>
       <span className="sr-only">{t('sections.hero.sr-title')}</span>
-    </motion.section>
+    </section>
   );
 }
