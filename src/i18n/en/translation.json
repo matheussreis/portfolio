@@ -6,6 +6,10 @@
         "currentDateText": "Present"
       }
     },
+    "meta": {
+      "title": "Matheus Reis | Software Engineer",
+      "description": "Personal portfolio showcasing my projects, skills, and experience."
+    },
     "languages": {
       "sr-title": "Languages",
       "options": {

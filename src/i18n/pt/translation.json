@@ -6,6 +6,10 @@
         "currentDateText": "Atualmente"
       }
     },
+    "meta": {
+      "title": "Matheus Reis | Engenheiro de Software",
+      "description": "Portfólio pessoal com meus projetos, competências e experiência."
+    },
     "languages": {
       "sr-title": "Idioma",
       "options": {

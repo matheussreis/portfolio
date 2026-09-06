@@ -20,31 +20,45 @@ type Locale = keyof typeof resources;
 
 const locales = Object.keys(resources) as Locale[];
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    debug: false,
-    resources: resources,
-    defaultNS,
-    interpolation: {
-      escapeValue: false,
-    },
-    backend: {
-      backends: [I18NextLocalStorageBackend],
-      backendOptions: [],
-      cacheHitMode: 'refreshAndUpdateStore',
-    },
-    react: {
-      bindI18nStore: 'added',
-    },
-  });
-
 const syncHtmlLang = (language: string) => {
   document.documentElement.lang = language;
 };
 
-syncHtmlLang(i18n.language);
+const syncMetaTags = () => {
+  document.title = i18n.t('system.meta.title');
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute('content', i18n.t('system.meta.description'));
+};
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init(
+    {
+      debug: false,
+      resources: resources,
+      fallbackLng: 'en',
+      defaultNS,
+      interpolation: {
+        escapeValue: false,
+      },
+      backend: {
+        backends: [I18NextLocalStorageBackend],
+        backendOptions: [],
+        cacheHitMode: 'refreshAndUpdateStore',
+      },
+      react: {
+        bindI18nStore: 'added',
+      },
+    },
+    () => {
+      syncHtmlLang(i18n.language);
+      syncMetaTags();
+    },
+  );
+
 i18n.on('languageChanged', syncHtmlLang);
+i18n.on('languageChanged', syncMetaTags);
 
 export { i18n, defaultNS, type Locale, locales };
