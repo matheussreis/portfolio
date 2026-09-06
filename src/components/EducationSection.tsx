@@ -29,9 +29,9 @@ export default function EducationSection() {
       ref={refs.education}
       className="bg-secondary p-6 min-h-[50vh] md:min-h-0 lg:min-h-0 select-none lg:p-8"
     >
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-foreground">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-foreground">
         {t(`${baseKey}.title`)}
-      </h1>
+      </h2>
       <div className="my-4 flex flex-col gap-4">
         {educationItems.map((item: I18nEducationItem, index: number) => {
           return (

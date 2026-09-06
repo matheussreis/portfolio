@@ -119,9 +119,9 @@ export default function SkillSection() {
       className="bg-primary p-6 min-h-[35vh] select-none lg:p-8"
     >
       <header className="flex flex-col md:flex-row lg:flex-row justify-between gap-2">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground dark:text-secondary-foreground">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground dark:text-secondary-foreground">
           {t(`${baseKey}.title`)}
-        </h1>
+        </h2>
         <div className="flex flex-wrap items-center gap-3 text-sm text-primary-foreground/90">
           {skillTypeKeys.map((skillTypeKey) => {
             const Icon = iconSkillTypeMapping[skillTypeKey];

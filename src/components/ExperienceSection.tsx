@@ -28,9 +28,9 @@ export default function ExperienceSection() {
       ref={refs.experience}
       className="bg-secondary p-6 min-h-[50vh] text-secondary-foreground select-none lg:p-8"
     >
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t('sections.experience.title')}
-      </h1>
+      </h2>
       <div className="my-4 flex flex-col gap-4">
         {experienceItems.map((item) => (
           <Card className="w-full" key={item.company}>

@@ -30,9 +30,9 @@ export default function ProjectSection() {
       ref={refs.projects}
       className="bg-primary p-6 min-h-[50vh] text-primary-foreground dark:text-secondary-foreground select-none lg:p-8"
     >
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
         {t(`${baseKey}.title`)}
-      </h1>
+      </h2>
       <div className="my-4">
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projectItems.map((project) => {
