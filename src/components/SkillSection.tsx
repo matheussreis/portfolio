@@ -42,7 +42,7 @@ const createIcon = (
   IconComponent: IconType,
   size?: string | number | undefined,
   className?: string,
-) => <IconComponent size={size} className={className} />;
+) => <IconComponent size={size} className={className} aria-hidden="true" />;
 
 const createSkillIcon = (IconComponent: IconType) => {
   return createIcon(IconComponent, 40, skillIconClass);
@@ -69,7 +69,7 @@ const iconSkillMapping = {
   talend: createSkillIcon(SiTalend),
   tailwind: createSkillIcon(RiTailwindCssFill),
   typescript: createSkillIcon(BiLogoTypescript),
-  sugarcrm: <SugarCrm className={skillIconClass} />,
+  sugarcrm: <SugarCrm className={skillIconClass} aria-hidden="true" />,
 };
 
 const iconSkillTypeMapping: Record<
