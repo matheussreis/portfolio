@@ -18,6 +18,7 @@ export default defineConfig({
           groups: [
             { name: 'icons', test: /react-icons|lucide-react|src\/icons\// },
             { name: 'lang', test: /i18next|src\/i18n\// },
+            { name: 'motion', test: /framer-motion/ },
             { name: 'vendor', test: /node_modules/ },
           ],
         },
